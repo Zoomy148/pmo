@@ -1,4 +1,4 @@
-import {MenuItem} from './services/menu.service';
+import {MenuItem} from '../services/menu.service';
 
 export const AppmenuItems: Array<MenuItem> = [
   { text: 'Сотрудники по отделам',

@@ -1,13 +1,14 @@
 :host{
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+
   flex-grow: 1;
 }
 ul {
   list-style-type: nope;
-  margin: 0;
-  padding: 0;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
 }
 li{
   display: inline;
