@@ -8,3 +8,14 @@
 .mat-button{
   font-size: 20px;
 }
+.profile-menu{
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background: aliceblue;
+  line-height: 2.5;
+}
+.avatar{
+  width: 150px;
+  height: 75px;
+}

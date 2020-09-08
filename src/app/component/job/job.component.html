@@ -33,24 +33,27 @@
         <table class="table">
           <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Проект</th>
-            <th scope="col">Контактное Лицо</th>
-            <th scope="col">Вакансия</th>
-            <th scope="col">Кол-во</th>
-            <th scope="col">Срок-работ <br />по проекту</th>
-            <th scope="col">Статус заявки</th>
+            <th scope="col" *ngFor="let column of headers1">{{column}}</th>
+<!--            <th scope="col">Проект</th>-->
+<!--            <th scope="col">Контактное Лицо</th>-->
+<!--            <th scope="col">Вакансия</th>-->
+<!--            <th scope="col">Кол-во</th>-->
+<!--            <th scope="col">Срок-работ <br />по проекту</th>-->
+<!--            <th scope="col">Статус заявки</th>-->
           </tr>
           </thead>
           <tbody>
 
-          <th scope="row">1</th>
-          <td>ТММЕД</td>
-          <td>Иванов</td>
-          <td>Разработчик backend</td>
-          <td>1</td>
-          <td>10.10.2018-31.11.2018</td>
-          <td>Открыта</td>
+          <tr *ngFor="let row of rowsp">
+            <td scope="row" *ngFor="let column of headers1">
+              {{row[column ]}}
+            </td>
+<!--          <td>ТММЕД</td>-->
+<!--          <td>Иванов</td>-->
+<!--          <td>Разработчик backend</td>-->
+<!--          <td>1</td>-->
+<!--          <td>10.10.2018-31.11.2018</td>-->
+<!--          <td>Открыта</td>-->
 
 
           </tbody>
@@ -86,31 +89,33 @@
           </div>
         </div>
         <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-
+        <button class="btn btn-outline-primary" (click)="openDialog()" >Создать заявку</button>
 
       </div>
       <div class="table">
         <table class="table">
           <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">ФИО</th>
-            <th scope="col">Контактное лицо</th>
-            <th scope="col">Должность</th>
-            <th scope="col">С какого числа <br />свободен</th>
-            <th scope="col">%</th>
-            <th scope="col">Статус заявки</th>
+            <th scope="col" *ngFor="let column of headers">{{column}}</th>
+<!--            <th scope="col">ФИО</th>-->
+<!--            <th scope="col">Контактное лицо</th>-->
+<!--            <th scope="col">Должность</th>-->
+<!--            <th scope="col">С какого числа <br />свободен</th>-->
+<!--            <th scope="col">%</th>-->
+<!--            <th scope="col">Статус заявки</th>-->
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Иванов И.И.</td>
-            <td>Риманов И.И.</td>
-            <td>Разработчик</td>
-            <td>20.20.2020</td>
-            <td>100%</td>
-            <td>Открыта</td>
+          <tr *ngFor="let row of rows">
+            <td scope="row" *ngFor="let column of headers">
+              {{row[column ]}}
+            </td>
+<!--            <td>Иванов И.И.</td>-->
+<!--            <td>Риманов И.И.</td>-->
+<!--            <td>Разработчик</td>-->
+<!--            <td>20.20.2020</td>-->
+<!--            <td>100%</td>-->
+<!--            <td>Открыта</td>-->
           </tr>
 
           </tbody>

@@ -31,29 +31,33 @@
     <table class="table">
       <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">ФИО</th>
-        <th scope="col">Группа</th>
-        <th scope="col">Должность</th>
-        <th scope="col">Руководитель</th>
-        <th scope="col">Апрель?</th>
+        <th scope="col" *ngFor="let column of headers">{{column}}</th>
+<!--        <th scope="col">ФИО</th>-->
+<!--        <th scope="col">Группа</th>-->
+<!--        <th scope="col">Должность</th>-->
+<!--        <th scope="col">Руководитель</th>-->
+<!--        <th scope="col">Апрель?</th>-->
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Иванов И.И.</td>
-        <td>Разработчик</td>
-        <td>Ведущий Разработчик</td>
-        <td>Руководитель1</td>
-        <td>ЛКЗЛ ТММЕД</td>
-      </tr>
-      <th scope="row">1</th>
-      <td>Иванов И.И.</td>
-      <td>Разработчик</td>
-      <td>Ведущий Разработчик</td>
-      <td>Руководитель1</td>
-      <td>ЛКЗЛ ТММЕД</td>
+      <tr *ngFor="let row of rows">
+        <td  *ngFor="let column of headers">
+          {{row[column ]}}
+        </td>
+<!--      <tr>-->
+<!--        <th scope="row">1</th>-->
+<!--        <td>Иванов И.И.</td>-->
+<!--        <td>Разработчик</td>-->
+<!--        <td>Ведущий Разработчик</td>-->
+<!--        <td>Руководитель1</td>-->
+<!--        <td>ЛКЗЛ ТММЕД</td>-->
+<!--      </tr>-->
+<!--      <th scope="row">1</th>-->
+<!--      <td>Иванов И.И.</td>-->
+<!--      <td>Разработчик</td>-->
+<!--      <td>Ведущий Разработчик</td>-->
+<!--      <td>Руководитель1</td>-->
+<!--      <td>ЛКЗЛ ТММЕД</td>-->
 
 
       </tbody>

@@ -6,5 +6,11 @@
     <a mat-button routerLink="employment">Занятость сотрудников</a>
     <a mat-button routerLink="job">Вакансии</a>
     <div class="spacerl"></div>
-    <a mat-button><mat-icon>account_circle</mat-icon>Иванов И.И.</a>
+    <a mat-button [matMenuTriggerFor]="menu" ><mat-icon>account_circle</mat-icon>Иванов И.И.</a>
+    <mat-menu #menu="matMenu">
+      <div class="profile-menu"><span>
+      <p><strong>Иванов И.И.<br/> Разраьотчик frontend <br/> Почта:vanechka2009@mail.ru <br/> tg - @vanechka</strong></p>
+        <img class="avatar" src="assets/avatarka.jpg" alt="Avatar">
+      </span></div>
+    </mat-menu>
   </mat-toolbar>
