@@ -1,12 +1,10 @@
-<div class="title-bar">
-  <div class="menu-area">
-    <div class="logotip">
-    <img class="logo" src="assets/logo.png" alt="logo" width="180" height="98" >
-    </div>
-<app-menu></app-menu>
-    <div class="user">
-      <span class="user-info">Семенов Н.А.  </span>
-      <span class="user-info">Должность№1</span>
-    </div>
-  </div>
-</div>
+
+  <mat-toolbar>
+    <img src="assets/logo.png" width="135" height="78">
+<div class="spacer"></div>
+    <a mat-button  routerLink="staff" >Сотрудники по отделам </a>
+    <a mat-button routerLink="employment">Занятость сотрудников</a>
+    <a mat-button routerLink="job">Вакансии</a>
+    <div class="spacerl"></div>
+    <a mat-button><mat-icon>account_circle</mat-icon>Иванов И.И.</a>
+  </mat-toolbar>

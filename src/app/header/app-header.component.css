@@ -1,39 +1,10 @@
-:host{
-  display: inline-block;
+
+.spacer{
+  flex: 1 1 auto;
 }
-
-.title-bar{
-  flex-grow: 1;
-  display: flex;
-  min-height: 80px;
-
-
-  border-bottom: 1px solid black;
-
+.spacerl {
+  flex: 1 1 auto;
 }
-.menu-area{
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  padding-right: 20px;
-  padding-left: 20px;
-
-}
-
-.user{
-  display: grid;
-  width: 300px;
-  border-left: 1px solid black;
-  padding-right: 0px;
-  font-size: 18px;
-  cursor: pointer;
-}
-.user-info{
-
-  padding-right: 40px;
-  margin-left: 40px;
-}
-.logotip{
-  border-right: 1px solid black;
-  padding-right: 10px;
+.mat-button{
+  font-size: 20px;
 }

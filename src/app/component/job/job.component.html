@@ -1,2 +1,121 @@
+<ngb-tabset [destroyOnHide]="false">
+  <ngb-tab title="Вакансии к закрытию">
+    <ng-template ngbTabContent>
+      <div class="title">
+        <h2>Вакансии к закрытию</h2>
+      </div>
+      <div class="control-menu">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>фильтр1</button>
+              <button ngbDropdownItem>Фильтр2</button>
+              <button ngbDropdownItem>фильтр3</button>
+            </div>
+          </div>
+        </div>
+        <div class="col2">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Фильтр</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Фильтр4</button>
+              <button ngbDropdownItem>Фильтр5</button>
+              <button ngbDropdownItem>Фильтр6</button>
+            </div>
+          </div>
+        </div>
+        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
 
-123
+
+      </div>
+      <div class="table">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Проект</th>
+            <th scope="col">Контактное Лицо</th>
+            <th scope="col">Вакансия</th>
+            <th scope="col">Кол-во</th>
+            <th scope="col">Срок-работ <br />по проекту</th>
+            <th scope="col">Статус заявки</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <th scope="row">1</th>
+          <td>ТММЕД</td>
+          <td>Иванов</td>
+          <td>Разработчик backend</td>
+          <td>1</td>
+          <td>10.10.2018-31.11.2018</td>
+          <td>Открыта</td>
+
+
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle><b>Освобождающиеся сотрудники</b> </ng-template>
+    <ng-template ngbTabContent>
+      <div class="title">
+        <h2>Освобождающиеся сотрудники</h2>
+      </div>
+      <div class="control-menu">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>фильтр1</button>
+              <button ngbDropdownItem>Фильтр2</button>
+              <button ngbDropdownItem>фильтр3</button>
+            </div>
+          </div>
+        </div>
+        <div class="col2">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Фильтр</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Фильтр4</button>
+              <button ngbDropdownItem>Фильтр5</button>
+              <button ngbDropdownItem>Фильтр6</button>
+            </div>
+          </div>
+        </div>
+        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+
+
+      </div>
+      <div class="table">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Контактное лицо</th>
+            <th scope="col">Должность</th>
+            <th scope="col">С какого числа <br />свободен</th>
+            <th scope="col">%</th>
+            <th scope="col">Статус заявки</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Иванов И.И.</td>
+            <td>Риманов И.И.</td>
+            <td>Разработчик</td>
+            <td>20.20.2020</td>
+            <td>100%</td>
+            <td>Открыта</td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+  </ngb-tab>
+ </ngb-tabset>

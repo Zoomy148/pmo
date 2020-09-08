@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuService} from '../services/menu.service';
+
+
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import {MenuService} from '../services/menu.service';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor(public menuService: MenuService) { }
+  constructor(){ }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
