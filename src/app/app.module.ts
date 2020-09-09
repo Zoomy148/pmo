@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { StaffComponent } from './component/staff/staff.component';
 import { EmploymentComponent } from './component/employment/employment.component';
@@ -18,6 +18,9 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { VacancyComponent } from './vacancy/vacancy.component';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import { Sort} from '@angular/material/sort';
+import {F} from '@angular/cdk/keycodes';
+import {SearchPipe} from './component/job/search.pipe';
+import { StatusPipe } from './component/job/status.pipe';
 
 
 @NgModule({
@@ -28,12 +31,14 @@ import { Sort} from '@angular/material/sort';
     JobComponent,
     AppHeaderComponent,
     VacancyComponent,
+    SearchPipe,
+    StatusPipe,
 
              ],
   entryComponents: [ VacancyComponent],
   imports: [
     BrowserModule, RouterModule.forRoot(appRoutes), NgbModule , MatToolbarModule, BrowserAnimationsModule, MatButtonModule, MatIconModule,
-    MatMenuModule, MatDialogModule, MatSortModule,
+    MatMenuModule, MatDialogModule, MatSortModule, FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

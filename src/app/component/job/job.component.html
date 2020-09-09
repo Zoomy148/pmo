@@ -71,8 +71,8 @@
         <div class="col">
           <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem >фильтр1</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" [(ngModel)]="SortbyParam">
+              <button ngbDropdownItem (click)="onSortDirection()">Статус Заявки</button>
               <button ngbDropdownItem>Фильтр2</button>
               <button ngbDropdownItem>фильтр3</button>
             </div>
@@ -88,7 +88,7 @@
             </div>
           </div>
         </div>
-        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" id="search" [(ngModel)]="searchStr" >
         <button class="btn btn-outline-primary" (click)="openDialog()" >Создать заявку</button>
 
       </div>
@@ -106,7 +106,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr   *ngFor="let row of sortedData">
+          <tr *ngFor="let row of sortedData | search:searchStr |status:[SortbyParam,SortDirection] ">
             <td >{{row.number}}</td>
             <td >{{row.name}}</td>
             <td>{{row.position}}</td>

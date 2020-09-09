@@ -6,6 +6,7 @@ import { Sort} from '@angular/material/sort';
 
 
 
+
 export interface rowsa{
   number: number;
   name: string;
@@ -22,6 +23,9 @@ export interface rowsa{
   styleUrls: ['./job.component.css']
 })
 export class JobComponent {
+  searchStr = '';
+  SortbyParam = '';
+  SortDirection = 'открыта';
 
   headers = [{
     number: '№',
@@ -102,6 +106,15 @@ export class JobComponent {
   openDialog(){
     this.dialog.open(VacancyComponent);
   }
+  onSortDirection(){
+    if (this.SortDirection === 'открыта'){
+
+      this.SortDirection = 'закрыта';
+    }else {
+      this.SortDirection = 'открыта';
+    }
+  }
+
   sortData(sort: Sort) {
     const data = this.rows.slice();
     if (!sort.active || sort.direction === '') {
