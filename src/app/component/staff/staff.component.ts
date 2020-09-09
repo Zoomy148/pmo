@@ -6,23 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./staff.component.css']
 })
 export class StaffComponent implements OnInit {
-  headers = ['ФИО', 'Группа', 'Должность', 'Руководитель', 'Апрель?'];
+  headers =  [ {
+    number: ' №',
+    name: ' ФИО',
+    group: ' Группа',
+    position: ' Должность',
+    leader: ' Руководитель',
+     project: ' Проект'}] ;
   rows = [
-    {
-      ФИО: '1',
-      Группа: 'Rage',
-      Должность: '18',
-      Руководитель: '10',
-      'Апрель?': '100'
-    },
-    {
-      ФИО: '2',
-      Группа: 'fsdfsdf',
-      Должность: '234',
-      Руководитель: '1234',
-      'Апрель?': '132400'
-    }
-  ];
+    { number: ' 1',
+      name: ' Жмышенко Валерий Альбертович',
+      group: ' Разработчики',
+      position: ' Ведущий разработчик',
+      leader: ' Руководитель1',
+      project: ' ЛКЗ ТММ  '}];
+
   constructor() { }
 
   ngOnInit(): void {

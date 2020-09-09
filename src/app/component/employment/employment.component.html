@@ -30,38 +30,29 @@
   <div class="table">
     <table class="table">
       <thead>
-      <tr>
-        <th scope="col" *ngFor="let column of headers">{{column}}</th>
-<!--        <th scope="col">ФИО</th>-->
-<!--        <th scope="col">Группа</th>-->
-<!--        <th scope="col">Должность</th>-->
-<!--        <th scope="col">Текущий месяц</th>-->
-<!--        <th scope="col">Текущий месяц+1</th>-->
-<!--        <th scope="col">Текущий месяц+2</th>-->
-<!--        <th scope="col">Текущий месяц+3</th>-->
+      <tr *ngFor="let column of headers">
+        <th scope="col">{{column.number}}</th>
+        <th scope="col">{{column.name}}</th>
+        <th scope="col">{{column.position}}</th>
+        <th scope="col">{{column.month}}</th>
+        <th scope="col">{{column.monthone}}</th>
+        <th scope="col">{{column.monthwo}}</th>
+        <th scope="col">{{column.monththree}}</th>
+
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let row of rows">
-        <td  *ngFor="let column of headers">
-          {{row[column ]}}
-        </td>
-<!--        <td>Иванов И.И.</td>-->
-<!--        <td>Разработчик</td>-->
-<!--        <td>Ведущий Разработчик</td>-->
-<!--        <td>ЛКЗЛ ТММЕД</td>-->
-<!--        <td>ЛКЗЛ ТММЕД</td>-->
-<!--        <td>ЛКЗЛ ТММЕД</td>-->
-<!--        <td>ЛКЗЛ ТММЕД</td>-->
+
+        <td >{{row.number}}</td>
+        <td >{{row.name}}</td>
+        <td >{{row.position}}</td>
+        <td >{{row.month}}</td>
+        <td >{{row.monthone}}</td>
+        <td >{{row.monthwo}}</td>
+        <td >{{row.monththree}}</td>
       </tr>
-<!--      <th scope="row">2</th>-->
-<!--      <td>Пупкин И.И.</td>-->
-<!--      <td>Разработчик</td>-->
-<!--      <td>Ведущий Разработчик</td>-->
-<!--      <td>ЛКЗЛ ТММЕД</td>-->
-<!--      <td>ЛКЗЛ ТММЕД</td>-->
-<!--      <td>ЛКЗЛ ТММЕД</td>-->
-<!--      <td>ЛКЗЛ ТММЕД</td>-->
+
 
 
       </tbody>

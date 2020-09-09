@@ -16,6 +16,8 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule} from '@angular/material/dialog';
 import { VacancyComponent } from './vacancy/vacancy.component';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import { Sort} from '@angular/material/sort';
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { VacancyComponent } from './vacancy/vacancy.component';
   entryComponents: [ VacancyComponent],
   imports: [
     BrowserModule, RouterModule.forRoot(appRoutes), NgbModule , MatToolbarModule, BrowserAnimationsModule, MatButtonModule, MatIconModule,
-    MatMenuModule, MatDialogModule,
+    MatMenuModule, MatDialogModule, MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

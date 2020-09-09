@@ -32,28 +32,28 @@
       <div class="table">
         <table class="table">
           <thead>
-          <tr>
-            <th scope="col" *ngFor="let column of headers1">{{column}}</th>
-<!--            <th scope="col">Проект</th>-->
-<!--            <th scope="col">Контактное Лицо</th>-->
-<!--            <th scope="col">Вакансия</th>-->
-<!--            <th scope="col">Кол-во</th>-->
-<!--            <th scope="col">Срок-работ <br />по проекту</th>-->
-<!--            <th scope="col">Статус заявки</th>-->
+          <tr *ngFor="let column of headers1">
+            <th scope="col" >{{column.number}}</th>
+            <th scope="col">{{column.project}}</th>
+            <th scope="col">{{column.contact}}</th>
+            <th scope="col">{{column.vacancy}}</th>
+            <th scope="col">{{column.quantity}}</th>
+            <th scope="col">{{column.date}}</th>
+            <th scope="col">{{column.status}}</th>
           </tr>
           </thead>
           <tbody>
 
           <tr *ngFor="let row of rowsp">
-            <td scope="row" *ngFor="let column of headers1">
-              {{row[column ]}}
+            <td >
+              {{row.number}}
             </td>
-<!--          <td>ТММЕД</td>-->
-<!--          <td>Иванов</td>-->
-<!--          <td>Разработчик backend</td>-->
-<!--          <td>1</td>-->
-<!--          <td>10.10.2018-31.11.2018</td>-->
-<!--          <td>Открыта</td>-->
+            <td >{{row.project}}</td>
+            <td >{{row.contact}}</td>
+            <td >{{row.vacancy}}</td>
+            <td >{{row.quantity}}</td>
+            <td >{{row.date}}</td>
+            <td >{{row.status}}</td>
 
 
           </tbody>
@@ -72,7 +72,7 @@
           <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem>фильтр1</button>
+              <button ngbDropdownItem >фильтр1</button>
               <button ngbDropdownItem>Фильтр2</button>
               <button ngbDropdownItem>фильтр3</button>
             </div>
@@ -93,29 +93,26 @@
 
       </div>
       <div class="table">
-        <table class="table">
-          <thead>
-          <tr>
-            <th scope="col" *ngFor="let column of headers">{{column}}</th>
-<!--            <th scope="col">ФИО</th>-->
-<!--            <th scope="col">Контактное лицо</th>-->
-<!--            <th scope="col">Должность</th>-->
-<!--            <th scope="col">С какого числа <br />свободен</th>-->
-<!--            <th scope="col">%</th>-->
-<!--            <th scope="col">Статус заявки</th>-->
+        <table class="table"  matSort (matSortChange)="sortData($event)">
+          <thead >
+          <tr *ngFor="let column of headers">
+            <th scope="col"  >{{column.number}}</th>
+            <th scope="col" mat-sort-header="name"  >{{column.name}}</th>
+            <th scope="col">{{column.position}}</th>
+            <th scope="col">{{column.date}}</th>
+            <th scope="col">{{column.procent}}</th>
+            <th scope="col" mat-sort-header="status">{{column.status}}</th>
+
           </tr>
           </thead>
-          <tbody>
-          <tr *ngFor="let row of rows">
-            <td scope="row" *ngFor="let column of headers">
-              {{row[column ]}}
-            </td>
-<!--            <td>Иванов И.И.</td>-->
-<!--            <td>Риманов И.И.</td>-->
-<!--            <td>Разработчик</td>-->
-<!--            <td>20.20.2020</td>-->
-<!--            <td>100%</td>-->
-<!--            <td>Открыта</td>-->
+          <tbody >
+          <tr   *ngFor="let row of sortedData">
+            <td >{{row.number}}</td>
+            <td >{{row.name}}</td>
+            <td>{{row.position}}</td>
+            <td>{{row.date}}</td>
+            <td>{{row.procent}}</td>
+            <td>{{row.status}}</td>
           </tr>
 
           </tbody>
