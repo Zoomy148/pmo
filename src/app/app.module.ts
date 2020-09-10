@@ -16,27 +16,35 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule} from '@angular/material/dialog';
 import { VacancyComponent } from './vacancy/vacancy.component';
-import {MatSort, MatSortModule} from '@angular/material/sort';
+import { MatSortModule} from '@angular/material/sort';
 
 
 
 
 @NgModule({
-  declarations: [
+  declarations:
+    [
     AppComponent,
-        StaffComponent,
+    StaffComponent,
     EmploymentComponent,
     JobComponent,
     AppHeaderComponent,
     VacancyComponent,
-
-
-
-             ],
+    ],
   entryComponents: [ VacancyComponent],
-  imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes), NgbModule , MatToolbarModule, BrowserAnimationsModule, MatButtonModule, MatIconModule,
-    MatMenuModule, MatDialogModule, MatSortModule, FormsModule,
+  imports:
+    [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule ,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatSortModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

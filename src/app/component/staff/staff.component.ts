@@ -6,20 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./staff.component.css']
 })
 export class StaffComponent implements OnInit {
-  headers =  [ {
+  headers =
+  [
+    {
     number: ' №',
     name: ' ФИО',
     group: ' Группа',
     position: ' Должность',
     leader: ' Руководитель',
-     project: ' Проект'}] ;
-  rows = [
-    { number: ' 1',
-      name: ' Жмышенко Валерий Альбертович',
-      group: ' Разработчики',
-      position: ' Ведущий разработчик',
-      leader: ' Руководитель1',
-      project: ' ЛКЗ ТММ  '}];
+     project: ' Проект'
+    }
+  ];
+
+  rows =
+    [
+        {
+          number: ' 1',
+          name: ' Жмышенко Валерий Альбертович',
+          group: ' Разработчики',
+          position: ' Ведущий разработчик',
+          leader: ' Руководитель1',
+          project: ' ЛКЗ ТММ  '
+        }
+    ];
 
   constructor() { }
 
