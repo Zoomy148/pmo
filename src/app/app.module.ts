@@ -17,10 +17,8 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule} from '@angular/material/dialog';
 import { VacancyComponent } from './vacancy/vacancy.component';
 import {MatSort, MatSortModule} from '@angular/material/sort';
-import { Sort} from '@angular/material/sort';
-import {F} from '@angular/cdk/keycodes';
-import {SearchPipe} from './component/job/search.pipe';
-import { StatusPipe } from './component/job/status.pipe';
+
+
 
 
 @NgModule({
@@ -31,8 +29,8 @@ import { StatusPipe } from './component/job/status.pipe';
     JobComponent,
     AppHeaderComponent,
     VacancyComponent,
-    SearchPipe,
-    StatusPipe,
+
+
 
              ],
   entryComponents: [ VacancyComponent],

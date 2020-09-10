@@ -14,7 +14,8 @@ export interface rowsa{
   position: string;
   date: string;
   procent: string;
-  status: string; }
+  status: string;
+}
 
 
 @Component({
@@ -24,18 +25,21 @@ export interface rowsa{
 })
 export class JobComponent {
   searchStr = '';
-  SortbyParam = '';
-  SortDirection = 'открыта';
 
-  headers = [{
+
+  headers = [
+      {
     number: '№',
     name: 'ФИО сотрудника',
     contact: 'Контактное лицо',
     position: 'Должность',
     date: 'С какого числа свободен',
     procent: '%',
-    status: 'Статус заявки'}];
-  headers1 = [{
+    status: 'Статус заявки'
+      }
+    ];
+  headers1 = [
+    {
     number: '№',
     project: 'Проект',
     contact: 'Контактное Лицо',
@@ -43,44 +47,55 @@ export class JobComponent {
     quantity: 'Кол-во',
     date: 'Срок-работ по проекту',
     status: 'Статус заявки'
-  }];
+    }
+  ];
   rows: rowsa[] = [
 
-    {number: 1,
+    {
+      number: 1,
       name: 'Никитин Д.Ф.',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'открыта'},
-    {number: 2,
+      status: 'открыта'
+    },
+    {
+      number: 2,
       name: 'Валерьев',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'открыта'},
-    {number: 3,
+      status: 'открыта'
+    },
+    {
+      number: 3,
       name: 'Алешин',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'закрыта'},
-    {number: 4,
+      status: 'закрыта'
+    },
+    {
+      number: 4,
       name: 'Друзь.',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'открыта'},
-    {number: 5,
+      status: 'открыта'
+    },
+    {
+      number: 5,
       name: 'Камышев',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'закрыта'},
+      status: 'закрыта'
+    },
 
 
   ];
@@ -106,36 +121,18 @@ export class JobComponent {
   openDialog(){
     this.dialog.open(VacancyComponent);
   }
-  onSortDirection(){
-    if (this.SortDirection === 'открыта'){
-
-      this.SortDirection = 'закрыта';
-    }else {
-      this.SortDirection = 'открыта';
-    }
-  }
-
-  sortData(sort: Sort) {
-    const data = this.rows.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'name':
-          return compare(a.name, b.name, isAsc);
-        case 'status':
-          return compare(a.status, b.status, isAsc);
-        default:
-          return 0;
-
-      }
-    });
+  onSortDirection(showActive: boolean){
+  if (showActive){
+     this.sortedData = this.rows.filter((row) => row.status === 'открыта');
+  } else {
+     this.sortedData = this.rows.filter((rows) => rows.status === 'закрыта');
   }}
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+ onSortAlpha(){
+    this.sortedData = this.rows.sort(function(a, b)
+        {const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+         if (nameA < nameB)
+           { return -1; }
+         if (nameA > nameB)
+           { return 0; }});
+ }
 }
-
-

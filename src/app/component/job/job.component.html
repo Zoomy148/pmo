@@ -71,10 +71,10 @@
         <div class="col">
           <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" [(ngModel)]="SortbyParam">
-              <button ngbDropdownItem (click)="onSortDirection()">Статус Заявки</button>
-              <button ngbDropdownItem>Фильтр2</button>
-              <button ngbDropdownItem>фильтр3</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+              <button ngbDropdownItem (click)="onSortDirection(showActe=true)" >Активные заявки</button>
+              <button ngbDropdownItem (click)="onSortDirection(showActe=false)">Закрытые заявки</button>
+              <button ngbDropdownItem (click)="onSortAlpha()"> В алфавитном порядке</button>
             </div>
           </div>
         </div>
@@ -93,21 +93,21 @@
 
       </div>
       <div class="table">
-        <table class="table"  matSort (matSortChange)="sortData($event)">
+        <table class="table"  >
           <thead >
           <tr *ngFor="let column of headers">
-            <th scope="col"  >{{column.number}}</th>
-            <th scope="col" mat-sort-header="name"  >{{column.name}}</th>
+            <th scope="col">{{column.number}}</th>
+            <th scope="col">{{column.name}}</th>
             <th scope="col">{{column.position}}</th>
             <th scope="col">{{column.date}}</th>
             <th scope="col">{{column.procent}}</th>
-            <th scope="col" mat-sort-header="status">{{column.status}}</th>
+            <th scope="col">{{column.status}}</th>
 
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let row of sortedData | search:searchStr |status:[SortbyParam,SortDirection] ">
-            <td >{{row.number}}</td>
+          <tr (click)="kiki()" *ngFor="let row of sortedData ">
+            <td>{{row.number}}</td>
             <td >{{row.name}}</td>
             <td>{{row.position}}</td>
             <td>{{row.date}}</td>
