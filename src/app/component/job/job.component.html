@@ -72,8 +72,8 @@
           <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
-              <button ngbDropdownItem (click)="onSortDirection(showActe=true)" >Активные заявки</button>
-              <button ngbDropdownItem (click)="onSortDirection(showActe=false)">Закрытые заявки</button>
+              <button ngbDropdownItem (click)="onSortDirection(true)" >Активные заявки</button>
+              <button ngbDropdownItem (click)="onSortDirection(false)">Закрытые заявки</button>
               <button ngbDropdownItem (click)="onSortAlpha()"> В алфавитном порядке</button>
             </div>
           </div>
@@ -88,8 +88,25 @@
             </div>
           </div>
         </div>
-        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" id="search" [(ngModel)]="searchStr" >
+        <input class="form-control mr-sm-2" type="text" [placeholder]="name1" [(ngModel)]="name"
+                (keydown.enter)="search(name,name1)"/>
+        <button (click)="change()">Изменить параметры поиска</button>
+
         <button class="btn btn-outline-primary" (click)="openDialog()" >Создать заявку</button>
+        <details> <p>Введите номер сотрудника:</p>
+          <input [(ngModel)]="mass2.number">
+          <p>Введите ФИО сотрудника:</p>
+          <input [(ngModel)]="mass2.name">
+          <p>Введите Должность сотрудника:</p>
+          <input [(ngModel)]="mass2.position">
+          <p>С какого числа сотрудник свободен:</p>
+          <input [(ngModel)]="mass2.date">
+          <p>Введите %:</p>
+          <input [(ngModel)]="mass2.procent">
+          <p>Введите статус заявки:</p>
+          <input [(ngModel)]="mass2.status">
+        <br>
+        <button (click)="addSotr(sortedData,mass2)">Создать сотрудника</button> </details>
 
       </div>
       <div class="table">
@@ -106,9 +123,9 @@
           </tr>
           </thead>
           <tbody >
-          <tr (click)="kiki()" *ngFor="let row of sortedData ">
+          <tr (click)="kiki(row.status)" *ngFor="let row of sortedData ">
             <td>{{row.number}}</td>
-            <td >{{row.name}}</td>
+            <td>{{row.name}}</td>
             <td>{{row.position}}</td>
             <td>{{row.date}}</td>
             <td>{{row.procent}}</td>

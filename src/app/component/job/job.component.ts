@@ -24,7 +24,9 @@ export interface rowsa{
   styleUrls: ['./job.component.css']
 })
 export class JobComponent {
-  searchStr = '';
+  name: string = '';
+  name1: string = 'Введите фамилию сотрудника';
+
 
 
   headers = [
@@ -49,7 +51,7 @@ export class JobComponent {
     status: 'Статус заявки'
     }
   ];
-  rows: rowsa[] = [
+public  rows: rowsa[] = [
 
     {
       number: 1,
@@ -80,9 +82,9 @@ export class JobComponent {
     },
     {
       number: 4,
-      name: 'Друзь.',
+      name: 'Друзь',
       contact: 'Иванов В.В.',
-      position: 'Руководитель',
+      position: 'Стажер',
       date: '27.03.2020',
       procent: '100',
       status: 'открыта'
@@ -111,6 +113,16 @@ export class JobComponent {
     },
 
   ];
+  mass2 =
+    {
+      number: 1,
+      name: '',
+      position: '',
+      date: '',
+      procent: '',
+      status: ''
+    }
+  ;
   sortedData: rowsa[];
 
 
@@ -134,5 +146,23 @@ export class JobComponent {
            { return -1; }
          if (nameA > nameB)
            { return 0; }});
+ }
+ public kiki(status) {
+    console.log(status);
+ }
+ public search(name, name1){
+  if ( name1 === 'Введите фамилию сотрудника' ){
+   this.sortedData = this.rows.filter((rows) => rows.name === name);}
+  else { this.sortedData = this.rows.filter((rows) => rows.position === name) ;}
+  }
+ public change() {
+    let name2 = 'Введите должность сотрудника';
+    if(this.name1 === 'Введите фамилию сотрудника')
+    {this.name1 = name2 ;}
+    else{this.name1 = 'Введите фамилию сотрудника' ;}
+ }
+ addSotr(sortedData, mass2) {
+    this.sortedData = sortedData.concat(mass2);
+
  }
 }
