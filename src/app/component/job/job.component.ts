@@ -14,7 +14,7 @@ export interface rowsa{
   position: string;
   date: string;
   procent: string;
-  status: string;
+  isOpen: boolean ;
 }
 
 
@@ -25,7 +25,9 @@ export interface rowsa{
 })
 export class JobComponent {
   name: string = '';
-  name1: string = 'Введите фамилию сотрудника';
+  isSearchByName: boolean = true;
+  condition: boolean = true;
+
 
 
 
@@ -37,7 +39,7 @@ export class JobComponent {
     position: 'Должность',
     date: 'С какого числа свободен',
     procent: '%',
-    status: 'Статус заявки'
+    status: 'Cтатус заявки'
       }
     ];
   headers1 = [
@@ -60,7 +62,7 @@ public  rows: rowsa[] = [
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'открыта'
+      isOpen: true
     },
     {
       number: 2,
@@ -69,7 +71,7 @@ public  rows: rowsa[] = [
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'открыта'
+      isOpen: true
     },
     {
       number: 3,
@@ -78,7 +80,7 @@ public  rows: rowsa[] = [
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'закрыта'
+      isOpen: false
     },
     {
       number: 4,
@@ -87,7 +89,7 @@ public  rows: rowsa[] = [
       position: 'Стажер',
       date: '27.03.2020',
       procent: '100',
-      status: 'открыта'
+      isOpen: true
     },
     {
       number: 5,
@@ -96,7 +98,7 @@ public  rows: rowsa[] = [
       position: 'Руководитель',
       date: '27.03.2020',
       procent: '100',
-      status: 'закрыта'
+      isOpen: true
     },
 
 
@@ -120,7 +122,7 @@ public  rows: rowsa[] = [
       position: '',
       date: '',
       procent: '',
-      status: ''
+      isOpen: true ,
     }
   ;
   sortedData: rowsa[];
@@ -130,14 +132,14 @@ public  rows: rowsa[] = [
   constructor( public dialog: MatDialog) {
     this.sortedData = this.rows.slice();
   }
-  openDialog(){
-    this.dialog.open(VacancyComponent);
-  }
+  // openDialog(){
+  //   this.dialog.open(VacancyComponent);
+  // }
   onSortDirection(showActive: boolean){
   if (showActive){
-     this.sortedData = this.rows.filter((row) => row.status === 'открыта');
+     this.sortedData = this.rows.filter((row) => row.isOpen = true);
   } else {
-     this.sortedData = this.rows.filter((rows) => rows.status === 'закрыта');
+     this.sortedData = this.rows.filter((rows) => rows.isOpen = false);
   }}
  onSortAlpha(){
     this.sortedData = this.rows.sort(function(a, b)
@@ -150,19 +152,25 @@ public  rows: rowsa[] = [
  public kiki(status) {
     console.log(status);
  }
- public search(name, name1){
-  if ( name1 === 'Введите фамилию сотрудника' ){
-   this.sortedData = this.rows.filter((rows) => rows.name === name);}
-  else { this.sortedData = this.rows.filter((rows) => rows.position === name) ;}
+ public search(name, name1): void {
+    if ( name1 ) {
+     this.sortedData = this.rows.filter((rows) => rows.name === name);
+    } else {
+      this.sortedData = this.rows.filter((rows) => rows.position === name);
+    }
   }
  public change() {
-    let name2 = 'Введите должность сотрудника';
-    if(this.name1 === 'Введите фамилию сотрудника')
-    {this.name1 = name2 ;}
-    else{this.name1 = 'Введите фамилию сотрудника' ;}
+    this.isSearchByName = !this.isSearchByName;
  }
+
  addSotr(sortedData, mass2) {
     this.sortedData = sortedData.concat(mass2);
 
  }
+ toogle(){
+    this.condition = !this.condition;
+ }
+addTrue(mass2){
+    mass2.isOpen = false;
+}
 }
