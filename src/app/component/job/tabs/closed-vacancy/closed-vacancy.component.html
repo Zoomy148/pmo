@@ -1,0 +1,58 @@
+<div class="title">
+  <h2>Вакансии к закрытию</h2>
+</div>
+<div class="control-menu">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>фильтр1</button>
+        <button ngbDropdownItem>Фильтр2</button>
+        <button ngbDropdownItem>фильтр3</button>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Фильтр</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Фильтр4</button>
+        <button ngbDropdownItem>Фильтр5</button>
+        <button ngbDropdownItem>Фильтр6</button>
+      </div>
+    </div>
+  </div>
+  <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+
+
+</div>
+<div class="table">
+  <table class="table">
+    <thead>
+    <tr *ngFor="let column of headers1">
+      <th scope="col" >{{column.number}}</th>
+      <th scope="col">{{column.project}}</th>
+      <th scope="col">{{column.contact}}</th>
+      <th scope="col">{{column.vacancy}}</th>
+      <th scope="col">{{column.quantity}}</th>
+      <th scope="col">{{column.date}}</th>
+      <th scope="col">{{column.status}}</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let row of rowsp">
+      <td >
+        {{row.number}}
+      </td>
+      <td >{{row.project}}</td>
+      <td >{{row.contact}}</td>
+      <td >{{row.vacancy}}</td>
+      <td >{{row.quantity}}</td>
+      <td >{{row.date}}</td>
+      <td >{{row.status}}</td>
+
+
+    </tbody>
+  </table>
+</div>

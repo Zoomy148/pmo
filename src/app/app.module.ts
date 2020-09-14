@@ -17,6 +17,9 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule} from '@angular/material/dialog';
 import { VacancyComponent } from './vacancy/vacancy.component';
 import { MatSortModule} from '@angular/material/sort';
+import { ClosedVacancyComponent } from './component/job/tabs/closed-vacancy/closed-vacancy.component';
+import { ReadyStaffComponent } from './component/job/tabs/ready-staff/ready-staff.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -30,22 +33,25 @@ import { MatSortModule} from '@angular/material/sort';
     JobComponent,
     AppHeaderComponent,
     VacancyComponent,
+    ClosedVacancyComponent,
+    ReadyStaffComponent,
     ],
   entryComponents: [ VacancyComponent],
-  imports:
-    [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    NgbModule ,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatDialogModule,
-    MatSortModule,
-    FormsModule,
-  ],
+    imports:
+        [
+            BrowserModule,
+            RouterModule.forRoot(appRoutes),
+            NgbModule,
+            MatToolbarModule,
+            BrowserAnimationsModule,
+            MatButtonModule,
+            MatIconModule,
+            MatMenuModule,
+            MatDialogModule,
+            MatSortModule,
+            FormsModule,
+            MatButtonToggleModule,
+        ],
   providers: [],
   bootstrap: [AppComponent]
 })
