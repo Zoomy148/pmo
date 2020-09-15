@@ -1,7 +1,7 @@
 
 
 export class HeaderService{
-  headers = [
+  title = [
     {
       number: '№',
       name: 'ФИО сотрудника',
@@ -11,7 +11,7 @@ export class HeaderService{
       procent: '%',
       status: 'Cтатус заявки'
     }];
-  headers1 = [
+  title1 = [
     {
       number: '№',
       project: 'Проект',
@@ -24,11 +24,11 @@ export class HeaderService{
   ];
 
   getData(){
-    return this.headers;
+    return this.title;
 
   }
   getData1(){
-    return this.headers1;
+    return this.title1;
   }
 
   constructor() {

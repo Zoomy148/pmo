@@ -4,7 +4,7 @@
 <div class="control-menu">
   <div class="col">
     <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
+     <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button ngbDropdownItem>фильтр1</button>
         <button ngbDropdownItem>Фильтр2</button>
@@ -29,30 +29,25 @@
 <div class="table">
   <table class="table">
     <thead>
-    <tr *ngFor="let column of headers1">
-      <th scope="col" >{{column.number}}</th>
-      <th scope="col">{{column.project}}</th>
-      <th scope="col">{{column.contact}}</th>
-      <th scope="col">{{column.vacancy}}</th>
-      <th scope="col">{{column.quantity}}</th>
-      <th scope="col">{{column.date}}</th>
-      <th scope="col">{{column.status}}</th>
-    </tr>
+      <tr *ngFor="let column of title1">
+        <th scope="col" >{{column.number}}</th>
+        <th scope="col">{{column.project}}</th>
+        <th scope="col">{{column.contact}}</th>
+        <th scope="col">{{column.vacancy}}</th>
+        <th scope="col">{{column.quantity}}</th>
+        <th scope="col">{{column.date}}</th>
+        <th scope="col">{{column.status}}</th>
+     </tr>
     </thead>
-    <tbody>
-
-    <tr *ngFor="let row of rowsp">
-      <td >
-        {{row.number}}
-      </td>
+   <tbody>
+    <tr *ngFor="let row of VacancyData">
+      <td >{{row.number}}</td>
       <td >{{row.project}}</td>
       <td >{{row.contact}}</td>
       <td >{{row.vacancy}}</td>
       <td >{{row.quantity}}</td>
       <td >{{row.date}}</td>
       <td >{{row.status}}</td>
-
-
-    </tbody>
+   </tbody>
   </table>
 </div>

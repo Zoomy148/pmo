@@ -28,7 +28,7 @@
 .isOpen{
   background: green;
 }
-.isOpens{
+.isClosed{
   background: red;
 }
 mat-button-toggle-group {

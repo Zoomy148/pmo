@@ -8,14 +8,16 @@ import { DataService} from '../../../../services/data.service';
   styleUrls: ['./closed-vacancy.component.css'],
   providers:[HeaderService, DataService]
 })
-export class ClosedVacancyComponent implements OnInit {
-headers1 = [];
-rowsp = [];
-  constructor(public headerService: HeaderService , public dataService: DataService ) { }
+  export class ClosedVacancyComponent implements OnInit {
+  title1 = [];
+  VacancyData = [];
+  constructor(
+    public headerService: HeaderService ,
+    public dataService: DataService ) { }
 
   ngOnInit(): void {
-    this.headers1 = this.headerService.getData1();
-    this.rowsp = this.dataService.getRowsp();
-  }
+    this.title1 = this.headerService.getData1();
+    this.VacancyData = this.dataService.getRowsp();
+}
 
 }

@@ -61,7 +61,7 @@ export class DataService{
 
 
   ];
-  rowsp = [
+  VacancyData = [
     {
       number: '1',
       project: 'ВМС РФ',
@@ -73,7 +73,7 @@ export class DataService{
     },
 
   ];
-  mass2 = {
+  NewEmployee = {
     number: 1,
     name: '',
     position: '',
@@ -83,12 +83,12 @@ export class DataService{
   };
   sortedData: rowsa[];
 
-  addSotr( mass2) {
-    this.sortedData.push(mass2);
+  addSotr( NewEmployee) {
+    this.sortedData.push(NewEmployee);
   }
 
   getRowsp(){
-      return this.rowsp;
+      return this.VacancyData;
   }
   getSortedData() {
       return this.sortedData;
@@ -97,7 +97,7 @@ export class DataService{
       return this.rows;
   }
   getMass() {
-    return this.mass2;
+    return this.NewEmployee;
   }
 
 

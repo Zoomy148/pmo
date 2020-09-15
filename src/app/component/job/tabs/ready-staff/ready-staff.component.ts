@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../../../services/data.service';
 import { HeaderService} from '../../../../services/header.service';
 import { MatDialog } from '@angular/material/dialog';
-import  {ConsService } from '../../../../services/cons.service';
+import {ConsService } from '../../../../services/cons.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 export interface rowsa{
@@ -23,14 +23,11 @@ export interface rowsa{
 export class ReadyStaffComponent implements OnInit {
    name: string = '';
    isSearchByName: boolean = true;
-   condition: boolean = true;
-   headers = [];
-   headers1 = [];
-   rowsp = [];
+   AddStaff: boolean = true;
+   title = [];
    rows: rowsa[] = [];
-   mass2 = {
-  };
-  sortedData = [];
+   NewEmployee = {};
+   sortedData = [];
   constructor(
    public dialog: MatDialog,
    public consService: ConsService,
@@ -67,20 +64,18 @@ export class ReadyStaffComponent implements OnInit {
   public change(): void {
     this.isSearchByName = !this.isSearchByName;
   }
-  addSotr( mass2): void {
-    this.dataService.addSotr(mass2);
+  addSotr( NewEmployee): void {
+    this.dataService.addSotr(NewEmployee);
   }
   toogle(): void {
-    this.condition = !this.condition;
+    this.AddStaff = !this.AddStaff;
   }
   ngOnInit(): void {
     this.consService.cons(this.sortedData);
-    this.headers = this.headerService.getData();
-    this.headers1 = this.headerService.getData1();
-    this.rowsp = this.dataService.getRowsp();
+    this.title = this.headerService.getData();
     this.sortedData = this.dataService.getSortedData();
     this.rows = this.dataService.getRows();
-    this.mass2 = this.dataService.getMass();
+    this.NewEmployee = this.dataService.getMass();
   }
 
 }
