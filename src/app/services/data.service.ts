@@ -73,10 +73,11 @@ export class DataService{
     },
 
   ];
-  NewEmployee = {
+  NewEmployee: rowsa = {
     number: 1,
     name: '',
     position: '',
+    contact: '',
     date: '',
     procent: '',
     isOpen: true ,

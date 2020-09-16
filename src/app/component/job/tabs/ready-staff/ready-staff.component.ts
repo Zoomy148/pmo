@@ -1,19 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { DataService} from '../../../../services/data.service';
 import { HeaderService} from '../../../../services/header.service';
 import { MatDialog } from '@angular/material/dialog';
-import {ConsService } from '../../../../services/cons.service';
+import { ConsService } from '../../../../services/cons.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { rowsa } from '../../../../services/data.service';
 
-export interface rowsa{
-  number: number;
-  name: string;
-  contact: string;
-  position: string;
-  date: string;
-  procent: string;
-  isOpen: boolean ;
-}
 @Component({
   selector: 'app-ready-staff',
   templateUrl: './ready-staff.component.html',
@@ -21,34 +13,39 @@ export interface rowsa{
   providers: [ConsService, HeaderService, DataService , MatButtonToggleModule]
 })
 export class ReadyStaffComponent implements OnInit {
+  @Input() rows: rowsa[] = [];
+  @Input() sortedData = [];
+  @Input() NewEmployee: object;
+  @Output() addSotr = new EventEmitter<object>();
    name: string = '';
    isSearchByName: boolean = true;
    AddStaff: boolean = true;
    title = [];
-   rows: rowsa[] = [];
-   NewEmployee = {};
-   sortedData = [];
+
+
   constructor(
    public dialog: MatDialog,
    public consService: ConsService,
-   public headerService: HeaderService,
-   public dataService: DataService)
+   public headerService: HeaderService)
   {
       this.sortedData = this.rows.slice();
   }
+
+  addEmployee(NewEmployee) {
+    this.addSotr.emit(NewEmployee);
+  }
   onSortDirection(showActive: boolean): void{
    if (showActive){
-    this.sortedData = this.rows.filter((row) => row.isOpen === true); }
-   else {
      this.sortedData = this.rows.filter((rows) => rows.isOpen === false); }
   }
   onSortAlpha(): void {
-      this.sortedData = this.rows.sort(function(a, b)
-      { const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+      this.sortedData = this.rows.sort((a, b) => {
+        const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
         if (nameA < nameB)
-          { return -1; }
-        if (nameA > nameB)
-          { return 0; }});
+            { return -1; }
+        if (nameA > nameB) {
+            return 0; }
+      });
   }
   public kiki(status): void {
       console.log(status);
@@ -64,18 +61,14 @@ export class ReadyStaffComponent implements OnInit {
   public change(): void {
     this.isSearchByName = !this.isSearchByName;
   }
-  addSotr( NewEmployee): void {
-    this.dataService.addSotr(NewEmployee);
-  }
-  toogle(): void {
+  cons(){console.log(this.sortedData);}
+    toogle(): void {
     this.AddStaff = !this.AddStaff;
   }
   ngOnInit(): void {
+
     this.consService.cons(this.sortedData);
     this.title = this.headerService.getData();
-    this.sortedData = this.dataService.getSortedData();
-    this.rows = this.dataService.getRows();
-    this.NewEmployee = this.dataService.getMass();
   }
 
 }

@@ -42,12 +42,12 @@
   <p>Выберите статус заявки:</p>
   <mat-button-toggle-group name="fontStyle" [(ngModel)]="NewEmployee.isOpen" aria-label="Font Style">
     <mat-button-toggle [value]="true">Открыта</mat-button-toggle>
-    <mat-button-toggle  [value]="false" >Закрыта</mat-button-toggle>
+    <mat-button-toggle [value]="false" >Закрыта</mat-button-toggle>
   </mat-button-toggle-group>
   <br>
    <div class="group">
     <button class="btn btn-outline-primary" type="submit" (click)="toogle()">Закрыть заявку</button>
-    <button class="btn btn-outline-primary" type="submit" (click)="addSotr(NewEmployee);toogle()" >Создать сотрудника</button>
+    <button class="btn btn-outline-primary" type="submit" (click)=addEmployee(NewEmployee);toogle();cons()>Создать сотрудника</button>
    </div>
 </div>
 
