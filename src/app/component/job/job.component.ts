@@ -9,13 +9,13 @@ import {rowsa} from '../../services/data.service';
 })
 export class JobComponent implements OnInit{
 
-  public  rows: rowsa[] = [
+  public  DataStaff: rowsa[] = [
     {
       number: 1,
       name: 'Никитин Д.Ф.',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -24,7 +24,7 @@ export class JobComponent implements OnInit{
       name: 'Валерьев',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -33,7 +33,7 @@ export class JobComponent implements OnInit{
       name: 'Алешин',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: false
     },
@@ -42,7 +42,7 @@ export class JobComponent implements OnInit{
       name: 'Друзь',
       contact: 'Иванов В.В.',
       position: 'Стажер',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -51,7 +51,7 @@ export class JobComponent implements OnInit{
       name: 'Камышев',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -66,8 +66,8 @@ export class JobComponent implements OnInit{
     isOpen: true ,
   };
 
-  addSotr( NewEmployee) {
-    this.rows.push(NewEmployee);
+  addEmployee( NewEmployee): void {
+    this.DataStaff.push(NewEmployee);
   }
 
 

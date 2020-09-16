@@ -1,6 +1,17 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {
+  AfterContentChecked, AfterContentInit, AfterViewChecked,
+  AfterViewInit,
+  Component, DoCheck,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { DataService} from '../../../../services/data.service';
-import { HeaderService} from '../../../../services/header.service';
+import { TitleService} from '../../../../services/title.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConsService } from '../../../../services/cons.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -10,13 +21,22 @@ import { rowsa } from '../../../../services/data.service';
   selector: 'app-ready-staff',
   templateUrl: './ready-staff.component.html',
   styleUrls: ['./ready-staff.component.css'],
-  providers: [ConsService, HeaderService, DataService , MatButtonToggleModule]
+  providers: [ConsService, TitleService, DataService , MatButtonToggleModule]
 })
-export class ReadyStaffComponent implements OnInit {
-  @Input() rows: rowsa[] = [];
+export class ReadyStaffComponent implements
+  OnInit ,
+  OnDestroy ,
+  OnChanges ,
+  AfterViewInit ,
+  AfterContentChecked ,
+  AfterViewChecked ,
+  DoCheck ,
+  AfterContentInit
+  {
+  @Input() DataStaff: rowsa[] = [];
   @Input() sortedData = [];
-  @Input() NewEmployee: object;
-  @Output() addSotr = new EventEmitter<object>();
+  @Input() NewEmployee: rowsa;
+  @Output() addEmployee = new EventEmitter<object>();
    name: string = '';
    isSearchByName: boolean = true;
    AddStaff: boolean = true;
@@ -26,20 +46,20 @@ export class ReadyStaffComponent implements OnInit {
   constructor(
    public dialog: MatDialog,
    public consService: ConsService,
-   public headerService: HeaderService)
+   public titleService: TitleService)
   {
-      this.sortedData = this.rows.slice();
+      this.sortedData = this.DataStaff.slice();
   }
 
-  addEmployee(NewEmployee) {
-    this.addSotr.emit(NewEmployee);
+  addEmployes(NewEmployee) {
+    this.addEmployee.emit(NewEmployee);
   }
   onSortDirection(showActive: boolean): void{
    if (showActive){
-     this.sortedData = this.rows.filter((rows) => rows.isOpen === false); }
+     this.sortedData = this.DataStaff.filter((DataStaff) => DataStaff.isOpen === false); }
   }
   onSortAlpha(): void {
-      this.sortedData = this.rows.sort((a, b) => {
+      this.sortedData = this.DataStaff.sort((a, b) => {
         const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
         if (nameA < nameB)
             { return -1; }
@@ -52,23 +72,43 @@ export class ReadyStaffComponent implements OnInit {
   }
   public search(name, isSearchByName): void {
     if ( isSearchByName ) {
-      this.sortedData = this.rows.filter((rows) => rows.name === name);
+      this.sortedData = this.DataStaff.filter((DataStaff) => DataStaff.name === name);
       }
     else {
-        this.sortedData = this.rows.filter((rows) => rows.position === name);
+        this.sortedData = this.DataStaff.filter((DataStaff) => DataStaff.position === name);
       }
   }
   public change(): void {
     this.isSearchByName = !this.isSearchByName;
   }
-  cons(){console.log(this.sortedData);}
+
+  cons(): void {console.log(this.sortedData); }
     toogle(): void {
     this.AddStaff = !this.AddStaff;
   }
   ngOnInit(): void {
 
-    this.consService.cons(this.sortedData);
-    this.title = this.headerService.getData();
+    this.consService.cons(this.NewEmployee);
+    this.title = this.titleService.getData();
   }
-
-}
+  ngOnDestroy(): void  { console.log(`onDestroy`); }
+  ngOnChanges(changes: SimpleChanges): void {
+    const change = changes[this.DataStaff];
+    console.log(change);
+  }
+  ngAfterViewInit(): void  {
+    console.log('AfterInit');
+  }
+  ngAfterContentChecked(): void  {
+    console.log('AfterContentCheck');
+  }
+  ngAfterViewChecked(): void  {
+    console.log('Afterview');
+  }
+  ngDoCheck(): void  {
+    console.log('DOCheck');
+  }
+  ngAfterContentInit(): void  {
+    console.log('AfterContentInit');
+  }
+  }

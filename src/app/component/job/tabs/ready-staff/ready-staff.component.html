@@ -23,7 +23,7 @@
     </div>
   </div>
 <input class="form-control mr-sm-2" type="text" placeholder="Поиск" [(ngModel)]="name"
-(keydown.enter)="search(name, isSearchByName)"/>
+(keydown.enter)="search(name , isSearchByName)"/>
   <button class="btn btn-outline-primary" (click)="change()">Изменить параметры поиска</button>
   <button class="btn btn-outline-primary" (click)="toogle()">Создать сотрудника</button>
 </div>
@@ -47,7 +47,7 @@
   <br>
    <div class="group">
     <button class="btn btn-outline-primary" type="submit" (click)="toogle()">Закрыть заявку</button>
-    <button class="btn btn-outline-primary" type="submit" (click)=addEmployee(NewEmployee);toogle();cons()>Создать сотрудника</button>
+    <button class="btn btn-outline-primary" type="submit" (click)=addEmployes(NewEmployee);toogle();cons()>Создать сотрудника</button>
    </div>
 </div>
 
@@ -58,7 +58,7 @@
     <thead >
       <tr *ngFor="let column of title">
         <th scope="col">{{column.number}}</th>
-        <th scope="col">{{column.name}}</th>
+        <th scope="col">{{column.name }}</th>
         <th scope="col">{{column.position}}</th>
         <th scope="col">{{column.date}}</th>
         <th scope="col">{{column.procent}}</th>
@@ -69,9 +69,9 @@
   <tbody >
     <tr (click)="kiki(row.isOpen)"  *ngFor="let row of sortedData ">
       <td>{{row.number}}</td>
-      <td>{{row.name}}</td>
-      <td>{{row.position}}</td>
-      <td>{{row.date}}</td>
+      <td>{{row.name | test}}</td>
+      <td>{{row.position | test}}</td>
+      <td>{{row.date| date: "dd-MM-yyyy"}}</td>
       <td>{{row.procent}}</td>
       <td [ngSwitch]="row.isOpen" [ngClass]="row.isOpen ? 'isOpen' : 'isClosed'" >
         <ng-container *ngSwitchCase="true">Открыта</ng-container>

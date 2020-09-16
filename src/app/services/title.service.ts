@@ -1,6 +1,6 @@
 
 
-export class HeaderService{
+export class TitleService{
   title = [
     {
       number: '№',

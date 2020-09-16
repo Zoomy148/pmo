@@ -12,7 +12,7 @@ export interface rowsa{
 export class DataService{
   name: string = '';
   isSearchByName: boolean = true;
-  public  rows: rowsa[] = [
+  public  DataStaff: rowsa[] = [
     {
       number: 1,
       name: 'Никитин Д.Ф.',
@@ -84,7 +84,7 @@ export class DataService{
   };
   sortedData: rowsa[];
 
-  addSotr( NewEmployee) {
+  addEmployee( NewEmployee): void {
     this.sortedData.push(NewEmployee);
   }
 
@@ -94,8 +94,8 @@ export class DataService{
   getSortedData() {
       return this.sortedData;
   }
-  getRows() {
-      return this.rows;
+  getDataStaff() {
+      return this.DataStaff;
   }
   getMass() {
     return this.NewEmployee;
@@ -103,6 +103,6 @@ export class DataService{
 
 
   constructor() {
-    this.sortedData = this.rows.slice();
+    this.sortedData = this.DataStaff.slice();
   }
 }

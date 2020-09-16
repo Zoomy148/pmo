@@ -20,6 +20,8 @@ import { MatSortModule} from '@angular/material/sort';
 import { ClosedVacancyComponent } from './component/job/tabs/closed-vacancy/closed-vacancy.component';
 import { ReadyStaffComponent } from './component/job/tabs/ready-staff/ready-staff.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { TestPipe } from './Pipe/test.pipe';
+
 
 
 
@@ -35,6 +37,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     VacancyComponent,
     ClosedVacancyComponent,
     ReadyStaffComponent,
+    TestPipe,
     ],
   entryComponents: [ VacancyComponent],
     imports:
