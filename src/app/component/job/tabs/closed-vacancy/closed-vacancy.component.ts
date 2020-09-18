@@ -5,7 +5,7 @@ import { DataService } from '../../../../services/data.service';
 @Component({
   selector: 'app-closed-vacancy',
   templateUrl: './closed-vacancy.component.html',
-  styleUrls: ['./closed-vacancy.component.css'],
+  styleUrls: ['./closed-vacancy.component.scss'],
   providers:[TitleService, DataService]
 })
   export class ClosedVacancyComponent implements OnInit {

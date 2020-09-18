@@ -1,7 +1,7 @@
 <div class="title">
   <h2>Освобождающиеся сотрудники</h2>
 </div>
-<div class="control-menu" *ngIf="AddStaff">
+<div class="control-menu" >
   <div class="col">
    <div ngbDropdown class="d-inline-block">
     <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
@@ -25,35 +25,35 @@
 <input class="form-control mr-sm-2" type="text" placeholder="Поиск" [(ngModel)]="name"
 (keydown.enter)="search(name , isSearchByName)"/>
   <button class="btn btn-outline-primary" (click)="change()">Изменить параметры поиска</button>
-  <button class="btn btn-outline-primary" (click)="toogle()">Создать сотрудника</button>
+  <button class="btn btn-outline-primary" routerLink="/addnew" >Создать сотрудника</button>
 </div>
 <!--        <button class="btn btn-outline-primary" (click)="openDialog()" >Создать заявку</button>-->
-<div class="addPerson" *ngIf="!AddStaff">
-  <p>Введите номер сотрудника:</p>
-    <input [(ngModel)]="NewEmployee.number">
-  <p>Введите ФИО сотрудника:</p>
-    <input [(ngModel)]="NewEmployee.name">
-  <p>Введите Должность сотрудника:</p>
-    <input [(ngModel)]="NewEmployee.position">
-  <p>С какого числа сотрудник свободен:</p>
-    <input [(ngModel)]="NewEmployee.date">
-  <p>Введите %:</p>
-    <input [(ngModel)]="NewEmployee.procent">
-  <p>Выберите статус заявки:</p>
-  <mat-button-toggle-group name="fontStyle" [(ngModel)]="NewEmployee.isOpen" aria-label="Font Style">
-    <mat-button-toggle [value]="true">Открыта</mat-button-toggle>
-    <mat-button-toggle [value]="false" >Закрыта</mat-button-toggle>
-  </mat-button-toggle-group>
-  <br>
-   <div class="group">
-    <button class="btn btn-outline-primary" type="submit" (click)="toogle()">Закрыть заявку</button>
-    <button class="btn btn-outline-primary" type="submit" (click)=addEmployes(NewEmployee);toogle();cons()>Создать сотрудника</button>
-   </div>
-</div>
+<!--<div class="addPerson" *ngIf="!AddStaff">-->
+<!--  <p>Введите номер сотрудника:</p>-->
+<!--    <input [(ngModel)]="NewEmployee.number">-->
+<!--  <p>Введите ФИО сотрудника:</p>-->
+<!--    <input [(ngModel)]="NewEmployee.name">-->
+<!--  <p>Введите Должность сотрудника:</p>-->
+<!--    <input [(ngModel)]="NewEmployee.position">-->
+<!--  <p>С какого числа сотрудник свободен:</p>-->
+<!--    <input [(ngModel)]="NewEmployee.date">-->
+<!--  <p>Введите %:</p>-->
+<!--    <input [(ngModel)]="NewEmployee.procent">-->
+<!--  <p>Выберите статус заявки:</p>-->
+<!--  <mat-button-toggle-group name="fontStyle" [(ngModel)]="NewEmployee.isOpen" aria-label="Font Style">-->
+<!--    <mat-button-toggle [value]="true">Открыта</mat-button-toggle>-->
+<!--    <mat-button-toggle [value]="false" >Закрыта</mat-button-toggle>-->
+<!--  </mat-button-toggle-group>-->
+<!--  <br>-->
+<!--   <div class="group">-->
+<!--    <button class="btn btn-outline-primary" type="submit" (click)="toogle();save()">Закрыть заявку</button>-->
+<!--    <button class="btn btn-outline-primary" type="submit" (click)=addEmployes(NewEmployee);toogle();cons();save()>Создать сотрудника</button>-->
+<!--   </div>-->
+<!--</div>-->
 
 
 
-<div class="table" *ngIf="AddStaff">
+<div class="table" >
   <table class="table"  >
     <thead >
       <tr *ngFor="let column of title">

@@ -18,7 +18,7 @@ export class DataService{
       name: 'Никитин Д.Ф.',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -27,7 +27,7 @@ export class DataService{
       name: 'Валерьев',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -36,7 +36,7 @@ export class DataService{
       name: 'Алешин',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: false
     },
@@ -45,7 +45,7 @@ export class DataService{
       name: 'Друзь',
       contact: 'Иванов В.В.',
       position: 'Стажер',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },
@@ -54,7 +54,7 @@ export class DataService{
       name: 'Камышев',
       contact: 'Иванов В.В.',
       position: 'Руководитель',
-      date: '27.03.2020',
+      date: '2020,01,10',
       procent: '100',
       isOpen: true
     },

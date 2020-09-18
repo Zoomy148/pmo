@@ -1,0 +1,22 @@
+<div class="addPerson" >
+  <p>Введите номер сотрудника:</p>
+  <input [(ngModel)]="NewEmployee.number">
+  <p>Введите ФИО сотрудника:</p>
+  <input [(ngModel)]="NewEmployee.name">
+  <p>Введите Должность сотрудника:</p>
+  <input [(ngModel)]="NewEmployee.position">
+  <p>С какого числа сотрудник свободен:</p>
+  <input [(ngModel)]="NewEmployee.date">
+  <p>Введите %:</p>
+  <input [(ngModel)]="NewEmployee.procent">
+  <p>Выберите статус заявки:</p>
+  <mat-button-toggle-group name="fontStyle" [(ngModel)]="NewEmployee.isOpen" aria-label="Font Style">
+    <mat-button-toggle [value]="true">Открыта</mat-button-toggle>
+    <mat-button-toggle [value]="false" >Закрыта</mat-button-toggle>
+  </mat-button-toggle-group>
+  <br>
+  <div class="group">
+    <button class="btn btn-outline-primary" type="submit" routerLink="/job" (click)="save()">Закрыть заявку</button>
+    <button class="btn btn-outline-primary" type="submit" routerLink="/job" (click)=addEmployes(NewEmployee);save()>Создать сотрудника</button>
+  </div>
+</div>

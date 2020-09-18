@@ -1,14 +1,7 @@
 import {
-  AfterContentChecked, AfterContentInit, AfterViewChecked,
-  AfterViewInit,
-  Component, DoCheck,
-  EventEmitter,
+  Component,
   Input,
-  OnChanges,
-  OnDestroy,
   OnInit,
-  Output,
-  SimpleChanges
 } from '@angular/core';
 import { DataService} from '../../../../services/data.service';
 import { TitleService} from '../../../../services/title.service';
@@ -16,44 +9,34 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConsService } from '../../../../services/cons.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { rowsa } from '../../../../services/data.service';
+import { ComponentCanDeactivate } from '../../exit.about.guard';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ready-staff',
   templateUrl: './ready-staff.component.html',
-  styleUrls: ['./ready-staff.component.css'],
+  styleUrls: ['./ready-staff.component.scss'],
   providers: [ConsService, TitleService, DataService , MatButtonToggleModule]
 })
 export class ReadyStaffComponent implements
-  OnInit ,
-  OnDestroy ,
-  OnChanges ,
-  AfterViewInit ,
-  AfterContentChecked ,
-  AfterViewChecked ,
-  DoCheck ,
-  AfterContentInit
-  {
-  @Input() DataStaff: rowsa[] = [];
-  @Input() sortedData = [];
-  @Input() NewEmployee: rowsa;
-  @Output() addEmployee = new EventEmitter<object>();
-   name: string = '';
-   isSearchByName: boolean = true;
-   AddStaff: boolean = true;
-   title = [];
+  OnInit  {
 
 
   constructor(
    public dialog: MatDialog,
    public consService: ConsService,
-   public titleService: TitleService)
+   public titleService: TitleService,
+   public dataService: DataService )
   {
       this.sortedData = this.DataStaff.slice();
   }
-
-  addEmployes(NewEmployee) {
-    this.addEmployee.emit(NewEmployee);
-  }
+  DataStaff: rowsa[] = [];
+  sortedData = [];
+  NewEmployee: rowsa;
+  name: string = '';
+  isSearchByName: boolean = true;
+  title = [];
+  saved: boolean = false;
   onSortDirection(showActive: boolean): void{
    if (showActive){
      this.sortedData = this.DataStaff.filter((DataStaff) => DataStaff.isOpen === false); }
@@ -81,34 +64,13 @@ export class ReadyStaffComponent implements
   public change(): void {
     this.isSearchByName = !this.isSearchByName;
   }
-
   cons(): void {console.log(this.sortedData); }
-    toogle(): void {
-    this.AddStaff = !this.AddStaff;
-  }
   ngOnInit(): void {
 
-    this.consService.cons(this.NewEmployee);
     this.title = this.titleService.getData();
-  }
-  ngOnDestroy(): void  { console.log(`onDestroy`); }
-  ngOnChanges(changes: SimpleChanges): void {
-    const change = changes[this.DataStaff];
-    console.log(change);
-  }
-  ngAfterViewInit(): void  {
-    console.log('AfterInit');
-  }
-  ngAfterContentChecked(): void  {
-    console.log('AfterContentCheck');
-  }
-  ngAfterViewChecked(): void  {
-    console.log('Afterview');
-  }
-  ngDoCheck(): void  {
-    console.log('DOCheck');
-  }
-  ngAfterContentInit(): void  {
-    console.log('AfterContentInit');
+    this.NewEmployee = this.dataService.getMass();
+    this.DataStaff = this.dataService.getDataStaff();
+    this.sortedData = this.dataService.getSortedData();
+    this.consService.cons(this.sortedData);
   }
   }
