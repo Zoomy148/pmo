@@ -13,17 +13,15 @@ import { AuthService} from '../../services/auth.service';
 export class AuthComponent implements OnInit {
   login = '';
   password = '';
-
-
   constructor(public authService: AuthService) {}
   getAuth(login, password) {
         this.authService.getAuf(login , password);
      }
-     cons(){
-     this.authService.cons();
-     }
+  cons(){
+    this.authService.cons();
+  }
 
   ngOnInit(): void {
-      }
+  }
 
 }

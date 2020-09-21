@@ -28,7 +28,7 @@ import { AuthComponent } from './component/auth/auth.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {TitleService} from './services/title.service';
 import {DataService} from './services/data.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -63,6 +63,7 @@ import {DataService} from './services/data.service';
       MatButtonToggleModule,
       ReactiveFormsModule,
       MatFormFieldModule,
+      HttpClientModule
     ],
   providers: [ExitAboutGuard, AboutGuard , TitleService , DataService],
   bootstrap: [AppComponent]
