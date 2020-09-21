@@ -86,6 +86,7 @@ export class DataService{
 
   addEmployee( NewEmployee): void {
     this.sortedData.push(NewEmployee);
+    console.log(this.sortedData);
   }
 
   getRowsp(){
@@ -96,6 +97,7 @@ export class DataService{
   }
   getDataStaff() {
       return this.DataStaff;
+      console.log(this.sortedData);
   }
   getMass() {
     return this.NewEmployee;

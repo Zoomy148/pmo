@@ -9,14 +9,14 @@ import {NewEmployeeComponent} from './component/job/tabs/ready-staff/new-employe
 import {AuthComponent} from './component/auth/auth.component';
 export const appRoutes: Routes =
   [
-  {path: 'staff' , component: StaffComponent },
+  {path: 'staff' , component: StaffComponent, canActivate: [AboutGuard] },
 
-  {path: 'employment', component: EmploymentComponent},
+  {path: 'employment', component: EmploymentComponent, canActivate: [AboutGuard]},
 
-  {path: 'job', component: JobComponent},
+  {path: 'job', component: JobComponent, canActivate: [AboutGuard]},
 
   {path: 'addnew', component: NewEmployeeComponent, canDeactivate: [ExitAboutGuard]},
 
-  {path: 'login', component: AuthComponent}
+  {path: '', component: AuthComponent}
 
 ];

@@ -28,6 +28,7 @@ import { AuthComponent } from './component/auth/auth.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
+
 @NgModule({
   declarations:
     [

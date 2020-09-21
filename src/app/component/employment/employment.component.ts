@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-employment',
   templateUrl: './employment.component.html',
-  styleUrls: ['./employment.component.css']
+  styleUrls: ['./employment.component.css'],
+  providers: []
 })
 export class EmploymentComponent implements OnInit {
 
@@ -40,6 +42,7 @@ export class EmploymentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

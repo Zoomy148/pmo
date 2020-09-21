@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
-  styleUrls: ['./staff.component.css']
+  styleUrls: ['./staff.component.css'],
+  providers: []
 })
 export class StaffComponent implements OnInit {
   headers =
@@ -33,6 +35,6 @@ export class StaffComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+     }
 
 }
