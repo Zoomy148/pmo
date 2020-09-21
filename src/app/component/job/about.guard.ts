@@ -9,7 +9,7 @@ import {Injectable} from '@angular/core';
 
 export class AboutGuard implements CanActivate, CanActivateChild{
   constructor(public router: Router) {  }
- check: boolean;
+ check = false;
   public route: ActivatedRouteSnapshot;
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean{
     if (this.check ){

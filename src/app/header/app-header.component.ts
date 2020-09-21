@@ -12,8 +12,6 @@ import {Component, Injectable, OnInit} from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-
-
   constructor() {}
 
   ngOnInit(): void {
