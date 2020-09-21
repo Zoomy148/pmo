@@ -1,16 +1,17 @@
-
-  <mat-toolbar *ngIf="this.auth.showHeader()">
+<mat-toolbar>
     <img src="assets/logo.png" width="135" height="78">
-<div class="spacer"></div>
+    <div class="spacer"></div>
     <a mat-button  routerLink="staff" >Сотрудники по отделам </a>
     <a mat-button routerLink="employment">Занятость сотрудников</a>
     <a mat-button routerLink="job">Вакансии</a>
     <div class="spacerl"></div>
     <a mat-button [matMenuTriggerFor]="menu" ><mat-icon>account_circle</mat-icon>Иванов И.И.</a>
     <mat-menu #menu="matMenu">
-      <div class="profile-menu"><span>
-      <p><strong>Иванов И.И.<br/> Разраьотчик frontend <br/> Почта:vanechka2009@mail.ru <br/> tg - @vanechka</strong></p>
-        <img class="avatar" src="assets/avatarka.jpg" alt="Avatar">
-      </span></div>
+        <div class="profile-menu">
+            <span>
+                <p><strong>Иванов И.И.<br/> Разраьотчик frontend <br/> Почта:vanechka2009@mail.ru <br/> tg - @vanechka</strong></p>
+                <img class="avatar" src="assets/avatarka.jpg" alt="Avatar">
+            </span>
+        </div>
     </mat-menu>
-  </mat-toolbar>
+</mat-toolbar>

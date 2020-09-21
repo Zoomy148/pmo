@@ -15,25 +15,25 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule} from '@angular/material/dialog';
-import { VacancyComponent } from './vacancy/vacancy.component';
+import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule} from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { VacancyComponent } from './vacancy/vacancy.component';
 import { ClosedVacancyComponent } from './component/job/tabs/closed-vacancy/closed-vacancy.component';
 import { ReadyStaffComponent } from './component/job/tabs/ready-staff/ready-staff.component';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { TestPipe } from './Pipe/test.pipe';
 import {ExitAboutGuard} from './component/job/exit.about.guard';
 import {AboutGuard} from './component/job/about.guard';
 import { NewEmployeeComponent } from './component/job/tabs/ready-staff/new-employee/new-employee.component';
 import { AuthComponent } from './component/auth/auth.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import {TitleService} from './services/title.service';
 import {DataService} from './services/data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
-  declarations:
-    [
+  declarations: [
     AppComponent,
     StaffComponent,
     EmploymentComponent,
@@ -45,27 +45,26 @@ import { HttpClientModule } from '@angular/common/http';
     TestPipe,
     NewEmployeeComponent,
     AuthComponent,
-    ],
+  ],
   entryComponents: [ VacancyComponent],
-  imports:
-    [
-      BrowserModule,
-      RouterModule.forRoot(appRoutes),
-      NgbModule,
-      MatToolbarModule,
-      BrowserAnimationsModule,
-      MatButtonModule,
-      MatIconModule,
-      MatMenuModule,
-      MatDialogModule,
-      MatSortModule,
-      FormsModule,
-      MatButtonToggleModule,
-      ReactiveFormsModule,
-      MatFormFieldModule,
-      HttpClientModule
-    ],
-  providers: [ExitAboutGuard, AboutGuard , TitleService , DataService],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatSortModule,
+    FormsModule,
+    MatButtonToggleModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    HttpClientModule
+  ],
+  providers: [ExitAboutGuard, AboutGuard , TitleService , DataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

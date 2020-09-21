@@ -9,23 +9,20 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class AuthService {
- check = false;
  users: User[] = [];
-  getAuf(login, password){
-    for (const user of this.users){
-      if (login === user.name && password === user.password)
-        { this.aboutGuard.check = true;
-          this.check = true; }
+  getAuf(login, password) {
+    for (const user of this.users) {
+      if (login === user.name && password === user.password) {
+          this.aboutGuard.check = true;
+      }
     }
-  }
-  showHeader(){
-     return this.check;
-  }
-  cons(){
-   console.log(this.showHeader() + 'сотояние хедера');
   }
 
   constructor(public aboutGuard: AboutGuard, public http: HttpClient, public  httpService: HttpService) {
-        this.httpService.getData().subscribe(data => this.users = data["userList"]);
+        this.httpService.getData().subscribe(
+            (data) => {
+                this.users = data["userList"];
+                console.log(this.users);
+            });
   }
 }

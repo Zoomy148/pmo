@@ -15,10 +15,7 @@ export class AuthComponent implements OnInit {
   password = '';
   constructor(public authService: AuthService) {}
   getAuth(login, password) {
-        this.authService.getAuf(login , password);
-     }
-  cons(){
-    this.authService.cons();
+    this.authService.getAuf(login , password);
   }
 
   ngOnInit(): void {

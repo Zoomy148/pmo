@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AboutGuard } from './component/job/about.guard';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor() {
-      }
+  constructor(
+      public auth: AboutGuard
+  ) {
+      setInterval(() => {
+          console.log(this.auth.check);
+      }, 1000)
+  }
 }
