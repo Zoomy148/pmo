@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService} from '../../services/auth.service';
 
 
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -13,6 +14,7 @@ export class AuthComponent implements OnInit {
   login = '';
   password = '';
 
+
   constructor(public authService: AuthService) {}
   getAuth(login, password) {
         this.authService.getAuf(login , password);
@@ -21,6 +23,7 @@ export class AuthComponent implements OnInit {
      this.authService.cons();
      }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+      }
 
 }

@@ -1,23 +1,29 @@
 import { Injectable } from '@angular/core';
+import { AboutGuard } from '../component/job/about.guard';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
- check: boolean;
+ check = false;
   getAuf(login, password){
     if (login === 'admin' && password === 'admin')
-    { return this.check = true; }
-    else { return  this.check = false; }
+    { this.aboutGuard.check = true;
+      this.check = true;
+      }
+    else { this.aboutGuard.check = false; }
   }
 
 
-getAufChecked(): boolean {
+showHeader(){
    return this.check;
 }
+
+
   cons(){
-   console.log(this.getAufChecked());
+   console.log(this.showHeader() + 'сотояние хедера');
   }
 
-  constructor() { }
+  constructor(public aboutGuard: AboutGuard) { }
 }

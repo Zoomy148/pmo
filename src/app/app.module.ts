@@ -26,6 +26,8 @@ import {AboutGuard} from './component/job/about.guard';
 import { NewEmployeeComponent } from './component/job/tabs/ready-staff/new-employee/new-employee.component';
 import { AuthComponent } from './component/auth/auth.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {TitleService} from './services/title.service';
+import {DataService} from './services/data.service';
 
 
 
@@ -62,7 +64,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       ReactiveFormsModule,
       MatFormFieldModule,
     ],
-  providers: [ExitAboutGuard, AboutGuard],
+  providers: [ExitAboutGuard, AboutGuard , TitleService , DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

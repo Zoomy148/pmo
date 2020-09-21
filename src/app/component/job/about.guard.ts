@@ -1,15 +1,14 @@
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild, UrlTree, Router} from '@angular/router';
 import {Observable, of} from 'rxjs';
 import {Injectable} from '@angular/core';
-import {AuthService} from '../../services/auth.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AboutGuard implements CanActivate, CanActivateChild{
-  constructor(public auth: AuthService, public router: Router) { this.check = this.auth.getAufChecked();
-  }
+  constructor(public router: Router) {  }
  check: boolean;
   public route: ActivatedRouteSnapshot;
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean{
@@ -17,7 +16,7 @@ export class AboutGuard implements CanActivate, CanActivateChild{
       return true;
     }
     else {
-      console.log(this.auth.getAufChecked());
+      console.log('Неверное ввели логин или пароль');
     }
   }
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot):
