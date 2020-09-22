@@ -1,7 +1,6 @@
 export class ConsService {
-  cons(arg){
+  cons(arg) {
    console.log(arg);
   }
-  constructor() {
-  }
+  constructor() {}
 }

@@ -1,21 +1,21 @@
 
-.spacer{
+.spacer {
   flex: 1 1 auto;
 }
 .spacerl {
   flex: 1 1 auto;
 }
-.mat-button{
+.mat-button {
   font-size: 20px;
 }
-.profile-menu{
+.profile-menu {
   display: flex;
   width: 200px;
   height: 200px;
   background: aliceblue;
   line-height: 2.5;
 }
-.avatar{
+.avatar {
   width: 150px;
   height: 75px;
 }

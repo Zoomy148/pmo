@@ -10,7 +10,8 @@ export class TitleService{
       date: 'С какого числа свободен',
       procent: '%',
       status: 'Cтатус заявки'
-    }];
+    }
+  ];
   title1 = [
     {
       number: '№',
@@ -25,12 +26,9 @@ export class TitleService{
 
   getData(){
     return this.title;
-
   }
   getData1(){
     return this.title1;
   }
-
-  constructor() {
-  }
+  constructor() {}
 }

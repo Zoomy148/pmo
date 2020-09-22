@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-
 @Component({
   selector: 'app-employment',
   templateUrl: './employment.component.html',
@@ -8,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   providers: []
 })
 export class EmploymentComponent implements OnInit {
-
-
-  headers =
-    [
+  headers = [
       {
         number: '#',
         name: ' ФИО',
@@ -21,10 +16,9 @@ export class EmploymentComponent implements OnInit {
         monthwo: 'Текущий месяц+2',
         monththree: ' Текущий месяц+3',
       }
-    ];
+  ];
 
-  rows =
-   [
+  rows = [
       {
         number: ' 1',
         name: 'Леоньтев В.К.',
@@ -33,16 +27,10 @@ export class EmploymentComponent implements OnInit {
         monthone: 'ЛКС',
         monthwo: 'ЛКС',
         monththree: 'ЛКС',
-
       }
-    ];
-
-
+  ];
 
   constructor() { }
-
   ngOnInit(): void {
-
   }
-
 }

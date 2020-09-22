@@ -1,13 +1,17 @@
 {
   "userList":
-  [{
-    "name": "admin",
-    "password": "admin"
-  },{
-    "name": "sklyarov",
-    "password": "sklyarov"
-  },{
-    "name": "root",
-    "password": "root123"
-  }]
+    [
+      {
+        "name": "admin",
+        "password": "admin"
+      },
+      {
+        "name": "sklyarov",
+        "password": "sklyarov"
+      },
+      {
+        "name": "root",
+        "password": "root123"
+      }
+    ]
 }

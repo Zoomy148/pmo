@@ -1,25 +1,23 @@
-:host{
+:host {
   display: inline-block;
 }
-.control-menu{
+.control-menu {
   flex-grow: 1;
   display: flex;
   min-height: 80px;
-
 }
-.col{
+.col {
   padding-left: 20px;
   padding-right: 20px;
 }
-.col2{
+.col2 {
   padding-left: 20px;
   padding-right: 40px;
 }
 .form-control {
-
   padding-left: 20px;
 }
-.title{
+.title {
     padding-bottom: 30px;
     padding-left: 10px;
 }

@@ -1,4 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output } from '@angular/core';
 
 @Component({
   selector: 'app-vacancy',
@@ -9,22 +13,18 @@ export class VacancyComponent  {
  @Input() rows: any[] = [];
  @Output() addmass1 = new EventEmitter();
 
-mass2 =
-  {
+  mass2 = {
     number: '',
     name: '',
     position: '',
     date: '',
     procent: '',
     status: ''
-  }
-;
+  };
 
- public addmass(rows,mass2){
+ public addmass(rows,mass2) {
    rows = rows.concat(mass2);
    console.log(rows);
 }
   constructor() { }
-
-
 }

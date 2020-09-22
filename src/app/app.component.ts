@@ -9,9 +9,5 @@ import { AboutGuard } from './component/job/about.guard';
 export class AppComponent {
   constructor(
       public auth: AboutGuard
-  ) {
-      setInterval(() => {
-          console.log(this.auth.check);
-      }, 1000)
-  }
+  ) {}
 }

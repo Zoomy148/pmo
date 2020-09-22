@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-
-
-
 @Component({
   selector: 'app-job',
   templateUrl: './job.component.html',
@@ -10,8 +7,6 @@ import { DataService } from '../../services/data.service';
   providers: [DataService]
 })
 export class JobComponent implements OnInit {
-   constructor() {}
- ngOnInit() {
-
- }
+ constructor() {}
+ ngOnInit(): void {}
 }

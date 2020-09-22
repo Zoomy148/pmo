@@ -30,32 +30,27 @@
   <div class="table">
     <table class="table">
       <thead>
-      <tr *ngFor="let column of headers">
-        <th scope="col">{{column.number}}</th>
-        <th scope="col">{{column.name}}</th>
-        <th scope="col">{{column.position}}</th>
-        <th scope="col">{{column.month}}</th>
-        <th scope="col">{{column.monthone}}</th>
-        <th scope="col">{{column.monthwo}}</th>
-        <th scope="col">{{column.monththree}}</th>
-
-      </tr>
+       <tr *ngFor="let column of headers">
+          <th scope="col">{{column.number}}</th>
+          <th scope="col">{{column.name}}</th>
+          <th scope="col">{{column.position}}</th>
+          <th scope="col">{{column.month}}</th>
+          <th scope="col">{{column.monthone}}</th>
+          <th scope="col">{{column.monthwo}}</th>
+          <th scope="col">{{column.monththree}}</th>
+        </tr>
       </thead>
-      <tbody>
-      <tr *ngFor="let row of rows">
-
-        <td >{{row.number}}</td>
-        <td >{{row.name}}</td>
-        <td >{{row.position}}</td>
-        <td >{{row.month}}</td>
-        <td >{{row.monthone}}</td>
-        <td >{{row.monthwo}}</td>
-        <td >{{row.monththree}}</td>
-      </tr>
-
-
-
-      </tbody>
+     <tbody>
+        <tr *ngFor="let row of rows">
+          <td >{{row.number}}</td>
+          <td >{{row.name}}</td>
+          <td >{{row.position}}</td>
+          <td >{{row.month}}</td>
+          <td >{{row.monthone}}</td>
+          <td >{{row.monthwo}}</td>
+          <td >{{row.monththree}}</td>
+        </tr>
+     </tbody>
     </table>
   </div>
 </div>

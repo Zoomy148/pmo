@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
@@ -8,20 +7,18 @@ import { Component, OnInit } from '@angular/core';
   providers: []
 })
 export class StaffComponent implements OnInit {
-  headers =
-  [
+  headers = [
     {
-    number: ' №',
-    name: ' ФИО',
-    group: ' Группа',
-    position: ' Должность',
-    leader: ' Руководитель',
-     project: ' Проект'
+      number: ' №',
+      name: ' ФИО',
+      group: ' Группа',
+      position: ' Должность',
+      leader: ' Руководитель',
+      project: ' Проект'
     }
   ];
 
-  rows =
-    [
+  rows = [
         {
           number: ' 1',
           name: ' Жмышенко Валерий Альбертович',
@@ -34,7 +31,5 @@ export class StaffComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-     }
-
+  ngOnInit(): void { }
 }

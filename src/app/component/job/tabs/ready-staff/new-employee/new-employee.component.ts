@@ -2,7 +2,6 @@ import {Component, OnInit } from '@angular/core';
 import {ComponentCanDeactivate} from '../../../exit.about.guard';
 import {Observable} from 'rxjs';
 import {DataService, rowsa} from '../../../../../services/data.service';
-
 @Component({
   selector: 'app-new-employee',
   templateUrl: './new-employee.component.html',
@@ -10,9 +9,7 @@ import {DataService, rowsa} from '../../../../../services/data.service';
   providers: [DataService]
 })
 export class NewEmployeeComponent implements OnInit, ComponentCanDeactivate {
-
   constructor(public dataService: DataService) { }
-
   saved: boolean = false;
   NewEmployee: rowsa;
   addEmployes(NewEmployee) {
@@ -21,12 +18,11 @@ export class NewEmployeeComponent implements OnInit, ComponentCanDeactivate {
   save(){
     this.saved = true;
   }
-    canDeactivate(): boolean | Observable<boolean>{
-
-    if(!this.saved){
+  canDeactivate(): boolean | Observable<boolean>{
+    if(!this.saved) {
       return confirm('Вы хотите покинуть страницу?');
     }
-    else{
+    else {
       return true;
     }
   }
@@ -34,5 +30,4 @@ export class NewEmployeeComponent implements OnInit, ComponentCanDeactivate {
     this.NewEmployee = this.dataService.getMass();
     console.log(this.NewEmployee);
   }
-
 }

@@ -16,12 +16,10 @@ import { DataService } from '../../../../services/data.service';
   constructor(
     public titleService: TitleService ,
     public dataService: DataService,
-      ) {}
+  ) {}
 
   ngOnInit(): void {
     this.title1 = this.titleService.getData1();
     this.VacancyData = this.dataService.getRowsp();
-
   }
-
 }

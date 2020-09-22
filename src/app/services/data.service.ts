@@ -58,8 +58,6 @@ export class DataService{
       procent: '100',
       isOpen: true
     },
-
-
   ];
   VacancyData = [
     {
@@ -71,7 +69,6 @@ export class DataService{
       date: '28.01.2020-28.02.2020',
       status: 'открыта'
     },
-
   ];
   NewEmployee: rowsa = {
     number: 1,
@@ -89,7 +86,7 @@ export class DataService{
     console.log(this.sortedData);
   }
 
-  getRowsp(){
+  getRowsp() {
       return this.VacancyData;
   }
   getSortedData() {
@@ -102,8 +99,6 @@ export class DataService{
   getMass() {
     return this.NewEmployee;
   }
-
-
   constructor() {
     this.sortedData = this.DataStaff.slice();
   }
