@@ -15,6 +15,10 @@
     <mat-button-toggle [value]="false" >Закрыта</mat-button-toggle>
   </mat-button-toggle-group>
   <br>
+  <div class="form-group" >
+    <label>Комментарий</label>
+    <textarea class="form-control"  rows="3"></textarea>
+  </div>
   <div class="group">
     <button class="btn btn-outline-primary" type="submit" routerLink="/job" (click)="save()">Закрыть заявку</button>
     <button class="btn btn-outline-primary" type="submit" routerLink="/job" (click)=addEmployes(NewEmployee);save()>Создать сотрудника</button>

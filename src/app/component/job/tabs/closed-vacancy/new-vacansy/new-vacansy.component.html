@@ -1,0 +1,204 @@
+<h2 class="title">Создание заявки на вакасию</h2>
+<div class="addPerson" >
+  <div class="naming">
+    <h4>Контактное лицо</h4>
+    <h4>Источник Вакансии</h4>
+    <h4>Вакантная должность</h4>
+    <h4>Обоснования появления Вакансии</h4>
+    <h4>Должностные обязанности</h4>
+    <h4>Название проекта</h4>
+    <br>
+    <br>
+    <h4>Базовое образование</h4>
+    <h4>Общий стаж работы</h4>
+    <h4>Опыт работы в указанной должности</h4>
+    <h4>Профессиональные навыки</h4>
+    <h4>Опыт работы с технологиями и <br> рограмными продуктами</h4>
+    <h4>Иностранный язык (степень владения)</h4>
+    <h4>Дополнительные требования</h4>
+    <br>
+    <br>
+    <h4>Пол</h4>
+    <h4>Возраст</h4>
+    <h4>Семейное положение</h4>
+    <h4>Прописка, гражданство</h4>
+    <h4>Дополнительные требования</h4>
+    <h4>Личностые качества,необходимые<br>для успешной работы</h4>
+    <h4>Субъективные пожелания</h4>
+    <h4>Дата предпологаемого выхода<br> сотрудника на работу</h4>
+    <h4>Место работы</h4>
+    <br>
+    <h4>Режим работы</h4>
+    <h4>Командировки,их продолжительность</h4>
+    <h4>Испытательный срок,его <br> продолжительность</h4>
+    <h4>Имя/Ссылка на файл с тестовым <br> заданием</h4>
+  </div>
+  <div class="input-group">
+    <p>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newVacancy.contact" >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput  [(ngModel)]="newVacancy.vacancy">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newVacancy.project">
+      </mat-form-field>
+      <br>
+      <br>
+      <span><b>Квалификационные требования</b></span>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput>
+
+      </mat-form-field>
+      <span>    </span>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+
+      <br>
+      <br>
+      <br>
+
+      <span><b>Персональные требования</b></span>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+    </p>
+  </div>
+  <div class="third-section">
+    <div class="namings">
+      <h4>Срок работы по проекту</h4>
+      <h4>Количество</h4>
+      <h4>Возможность удаленной работы</h4>
+      <br><br>
+      <h4>Оклад на испытательный<br>срок</h4>
+      <h4>Оклад по окончании<br>испытательного срока</h4>
+    </div>
+    <div class="input-groups">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newVacancy.date" >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newVacancy.quantity">
+      </mat-form-field>
+      <div class="form-check">
+        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+      </div>
+      <br><br>
+      <span><b>Оплата труда</b></span>
+      <br><br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <br><br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="dade">
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Собеседующий</mat-label>
+        <input matInput >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>ФИО1</mat-label>
+        <input matInput >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>ФИО2</mat-label>
+        <input matInput >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput >
+      </mat-form-field>
+      </div>
+
+
+  </div>
+  <div class="buttons">
+    <button class="btn btn-outline-primary" type="submit" routerLink="/job"
+      (click)="save()">Закрыть заявку</button>
+   <button class="btn btn-outline-primary" type="submit"
+      (click)=addVacancy(newVacancy);save()>Создать сотрудника</button>
+  </div>
+ </div>
+

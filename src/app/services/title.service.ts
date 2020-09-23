@@ -9,7 +9,8 @@ export class TitleService{
       position: 'Должность',
       date: 'С какого числа свободен',
       procent: '%',
-      status: 'Cтатус заявки'
+      status: 'Cтатус заявки',
+      changeStatus: '',
     }
   ];
   title1 = [

@@ -33,7 +33,17 @@
 }
 mat-button-toggle-group {
   margin-left: 12px;
+  outline: none;
 }
 .group{
   padding-top: 10px;
 }
+button {
+ outline: none;
+}
+.example-full-width {
+  width: 100%;
+  margin-top: 0px ;
+  margin-bottom: 0px;
+}
+

@@ -25,7 +25,7 @@
 <input class="form-control mr-sm-2" type="text" placeholder="Поиск" [(ngModel)]="name"
 (keydown.enter)="search(name , isSearchByName)"/>
   <button class="btn btn-outline-primary" (click)="change()">Изменить параметры поиска</button>
-  <button class="btn btn-outline-primary" routerLink="/addnew" >Создать сотрудника</button>
+  <button class="btn btn-outline-primary"  (click)="open(content)" >Создать заявку</button>
 </div>
 <div class="table" >
   <table class="table"  >
@@ -37,20 +37,82 @@
         <th scope="col">{{column.date}}</th>
         <th scope="col">{{column.procent}}</th>
         <th scope="col">{{column.status}}</th>
+        <th scope="col">{{column.changeStatus}}</th>
       </tr>
     </thead>
   <tbody >
-    <tr (click)="kiki(row.isOpen)"  *ngFor="let row of sortedData ">
-      <td>{{row.number}}</td>
+    <tr *ngFor="let row of sortedData ">
+      <td>{{row.number }}</td>
       <td>{{row.name | test}}</td>
       <td>{{row.position | test}}</td>
       <td>{{row.date| date: "dd-MM-yyyy"}}</td>
       <td>{{row.procent}}</td>
-      <td [ngSwitch]="row.isOpen" [ngClass]="row.isOpen ? 'isOpen' : 'isClosed'" >
+      <td [ngSwitch]="row.isOpen"  >
         <ng-container *ngSwitchCase="true">Открыта</ng-container>
         <ng-container *ngSwitchCase="false">Закрыта</ng-container>
       </td>
+      <td>
+        <div ngbDropdown class="d-inline-block">
+          <button ngbDropdownToggle><img src="assets/polygon.png"></button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="changeStatusOpen(row.isOpen)">Открыта</button>
+            <button ngbDropdownItem (click)="changeStatusMeet(row.isOpen)">Назначена встреча</button>
+            <button ngbDropdownItem (click)="changeStatusFalse(row.isOpen)">Закрыта</button>
+          </div>
+        </div>
+       </td>
     </tr>
   </tbody>
   </table>
 </div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Добавить сотрудника</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="addPerson" >
+      <mat-form-field class="example-full-width">
+        <mat-label>Введите номер сотрудника:</mat-label>
+        <input matInput [(ngModel)]="NewEmployee.number">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Введите ФИО сотрудника:</mat-label>
+        <input matInput [(ngModel)]="NewEmployee.name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Введите Должность сотрудника:</mat-label>
+        <input matInput [(ngModel)]="NewEmployee.position">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>С какого числа сотрудник свободен:</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="NewEmployee.date" >
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Введите % на который сотрудник свободен:</mat-label>
+        <input matInput [(ngModel)]="NewEmployee.procent">
+      </mat-form-field>
+      <p>Выберите статус заявки:</p>
+      <mat-button-toggle-group name="fontStyle" [(ngModel)]="NewEmployee.isOpen" aria-label="Font Style">
+        <mat-button-toggle [value]="true">Открыта</mat-button-toggle>
+        <mat-button-toggle [value]="false" >Закрыта</mat-button-toggle>
+      </mat-button-toggle-group>
+      <br>
+      <div class="form-group" >
+        <label>Комментарий</label>
+        <textarea class="form-control"  rows="3"></textarea>
+      </div>
+     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click');addEmployes(NewEmployee)">Создать заявку</button>
+  </div>
+</ng-template>

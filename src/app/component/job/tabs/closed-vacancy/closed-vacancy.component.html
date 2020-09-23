@@ -6,9 +6,9 @@
     <div ngbDropdown class="d-inline-block">
      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Фильтр</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem>фильтр1</button>
-        <button ngbDropdownItem>Фильтр2</button>
-        <button ngbDropdownItem>фильтр3</button>
+        <button ngbDropdownItem (click)="onSortDirection(true)">Активные заявка</button>
+        <button ngbDropdownItem (click)="onSortDirection(false)">Закрытые заявки</button>
+        <button ngbDropdownItem (click)="onSortAlpha()">В алфавитном порядке</button>
       </div>
     </div>
   </div>
@@ -22,7 +22,8 @@
       </div>
     </div>
   </div>
-  <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+  <input class="form-control mr-sm-4" type="search" placeholder="Поиск" aria-label="Search">
+  <button class="btn btn-outline-primary" routerLink="/newvacancy" >Создать заявку</button>
 </div>
 <div class="table">
   <table class="table">
@@ -46,6 +47,14 @@
         <td >{{row.quantity}}</td>
         <td >{{row.date}}</td>
         <td >{{row.status}}</td>
+        <td > <div ngbDropdown class="d-inline-block">
+          <button ngbDropdownToggle><img src="assets/polygon.png"></button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="changeStatusOpen(row.status)">Открыта</button>
+            <button ngbDropdownItem (click)="changeStatusMeet(row.status)">Назначена встреча</button>
+            <button ngbDropdownItem (click)="changeStatusFalse(row.status)">Закрыта</button>
+          </div>
+        </div> </td>
    </tbody>
   </table>
 </div>

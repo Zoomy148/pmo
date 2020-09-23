@@ -1,6 +1,5 @@
 import {
   Component,
-  Input,
   OnInit,
 } from '@angular/core';
 import { DataService} from '../../../../services/data.service';
@@ -9,12 +8,21 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConsService } from '../../../../services/cons.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { rowsa } from '../../../../services/data.service';
+import {
+  NgbModalConfig,
+  NgbModal,
+  NgbDateStruct
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-ready-staff',
   templateUrl: './ready-staff.component.html',
   styleUrls: ['./ready-staff.component.scss'],
-  providers: [ConsService, TitleService, DataService , MatButtonToggleModule]
+  providers: [
+    ConsService,
+    TitleService,
+    DataService ,
+    MatButtonToggleModule]
 })
 export class ReadyStaffComponent implements
   OnInit {
@@ -22,10 +30,14 @@ export class ReadyStaffComponent implements
     public dialog: MatDialog,
     public consService: ConsService,
     public titleService: TitleService,
-    public dataService: DataService) {
+    public dataService: DataService,
+    public modalService: NgbModal,
+    config: NgbModalConfig) {
     this.sortedData = this.DataStaff.slice();
+    config.backdrop = 'static';
+    config.keyboard = false;
   }
-
+  model: NgbDateStruct;
   DataStaff: rowsa[] = [];
   sortedData = [];
   NewEmployee: rowsa;
@@ -33,14 +45,19 @@ export class ReadyStaffComponent implements
   isSearchByName: boolean = true;
   title = [];
   saved: boolean = false;
-
+  open(content): void {
+    this.modalService.open(content);
+  }
   onSortDirection(showActive: boolean): void {
     if (showActive) {
+      this.sortedData = this.DataStaff.filter(
+        (DataStaff) => DataStaff.isOpen === true);
+    }
+    if (!showActive) {
       this.sortedData = this.DataStaff.filter(
         (DataStaff) => DataStaff.isOpen === false);
     }
   }
-
   onSortAlpha(): void {
     this.sortedData = this.DataStaff.sort((a, b) => {
       const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
@@ -52,11 +69,6 @@ export class ReadyStaffComponent implements
       }
     });
   }
-
-  public kiki(status): void {
-    console.log(status);
-  }
-
   public search(name, isSearchByName): void {
     if (isSearchByName) {
       this.sortedData = this.DataStaff.filter(
@@ -70,11 +82,25 @@ export class ReadyStaffComponent implements
   public change(): void {
     this.isSearchByName = !this.isSearchByName;
   }
+  public changeStatusOpen(isOpen): void {
+    isOpen = true;
+    console.log(isOpen);
+  }
+  public changeStatusFalse(isOpen): void {
+    isOpen = false;
+    console.log(isOpen);
+  }
+  public changeStatusMeet(isOpen): void {
+    isOpen = 'Назначена Встреча';
+    console.log(isOpen);
+  }
 
   cons(): void {
     console.log(this.sortedData);
   }
-
+  addEmployes(NewEmployee): void {
+    this.dataService.addEmployee(NewEmployee);
+  }
   ngOnInit(): void {
     this.title = this.titleService.getData();
     this.NewEmployee = this.dataService.getMass();
