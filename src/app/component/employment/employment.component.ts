@@ -10,6 +10,7 @@ export class EmploymentComponent implements OnInit {
       {
         number: '#',
         name: ' ФИО',
+        group: ' Группа',
         position: ' Должность',
         month: ' Текущий месяц',
         monthone: ' Текущий месяц+1',
@@ -22,7 +23,8 @@ export class EmploymentComponent implements OnInit {
       {
         number: ' 1',
         name: 'Леоньтев В.К.',
-        position: 'Разработчик',
+        group: 'Разработчик',
+        position: 'Ведущий разработчик',
         month: 'ЛКС',
         monthone: 'ЛКС',
         monthwo: 'ЛКС',

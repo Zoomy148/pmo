@@ -1,5 +1,5 @@
 // tslint:disable-next-line:class-name
-export interface rowsa{
+export interface rowsa {
   number: number;
   name: string;
   contact: string;
@@ -17,7 +17,21 @@ export interface vancy {
   date: string;
   status: true;
 }
-
+export interface commerce {
+  shortName: string;
+  direction: string;
+  projectDirector: string;
+  activeStage: string;
+  statusStage: string;
+}
+export interface presale {
+  direction: string;
+  customer: string;
+  project: string;
+  responsible: string;
+  stage: string;
+  status: string;
+}
 export class DataService{
   name: string = '';
   isSearchByName: boolean = true;
@@ -116,6 +130,64 @@ export class DataService{
     status: true
   };
   sortedData: rowsa[];
+  commerceDataArchive: commerce[] =
+    [
+      {
+        shortName: 'ТММЕД',
+        direction: 'Направление 1',
+        projectDirector: 'Руководитель 1',
+        activeStage: 'Этап 1' ,
+        statusStage: 'Статус 1'
+      },
+      {
+        shortName: 'ТММЕД',
+        direction: 'Направление 1',
+        projectDirector: 'Руководитель 1',
+        activeStage: 'Этап 1' ,
+        statusStage: 'Статус 1'
+      }
+
+  ];
+  commerceDataActive: commerce[] =
+    [
+      {
+        shortName: 'Aльянс',
+        direction: 'Направление 1',
+        projectDirector: 'Руководитель 1',
+        activeStage: 'Этап 1' ,
+        statusStage: 'Статус 1'
+      },
+      {
+        shortName: 'Aльянс',
+        direction: 'Направление 1',
+        projectDirector: 'Руководитель 1',
+        activeStage: 'Этап 1' ,
+        statusStage: 'Статус 1'
+      }
+
+  ];
+  presaleDataArchive: presale[] =
+    [
+      {
+        direction: 'Направление 1',
+        customer: 'Кокосов Андрей',
+        project: 'Проект 1',
+        responsible: 'Ответственный 1',
+        stage: 'Этап 1',
+        status: 'Статус 1',
+      }
+    ];
+  presaleDataActive: presale[] =
+    [
+      {
+        direction: 'Направление 2',
+        customer: 'Геннадий Аранович',
+        project: 'Проект 2',
+        responsible: 'Ответственный 2',
+        stage: 'Этап 2',
+        status: 'Статус 2',
+      }
+    ];
 
   addEmployee( NewEmployee): void {
     this.sortedData.push(NewEmployee);
@@ -139,7 +211,19 @@ export class DataService{
     return this.NewEmployee;
   }
   getVacancy() {
-    return this.NewVacancy
+    return this.NewVacancy;
+  }
+  getCommerceDataArchive() {
+    return this.commerceDataArchive;
+  }
+  getCommerceDataActive() {
+    return this.commerceDataActive;
+  }
+  getPresaleDataArchive() {
+    return this.presaleDataArchive;
+  }
+  getPresaleDataActive() {
+    return this.presaleDataActive;
   }
   constructor() {
     this.sortedData = this.DataStaff.slice();

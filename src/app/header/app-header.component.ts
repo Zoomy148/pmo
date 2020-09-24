@@ -1,4 +1,8 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {
+  Component,
+  Injectable,
+  OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,8 +15,10 @@ import {Component, Injectable, OnInit} from '@angular/core';
   styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent implements OnInit {
-
-  constructor() {}
+  nav(): void {
+    this.router.navigate(['/main']);
+  }
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
   }

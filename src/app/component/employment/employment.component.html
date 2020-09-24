@@ -33,6 +33,7 @@
        <tr *ngFor="let column of headers">
           <th scope="col">{{column.number}}</th>
           <th scope="col">{{column.name}}</th>
+          <th scope="col">{{column.group}}</th>
           <th scope="col">{{column.position}}</th>
           <th scope="col">{{column.month}}</th>
           <th scope="col">{{column.monthone}}</th>
@@ -44,6 +45,7 @@
         <tr *ngFor="let row of rows">
           <td >{{row.number}}</td>
           <td >{{row.name}}</td>
+          <td >{{row.group}}</td>
           <td >{{row.position}}</td>
           <td >{{row.month}}</td>
           <td >{{row.monthone}}</td>

@@ -1,0 +1,77 @@
+<div class="control-menu">
+  <div class="col2">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary"  ngbDropdownToggle>Фильтр</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Фильтр 1</button>
+        <button ngbDropdownItem>Фильтр 2</button>
+        <button ngbDropdownItem>Фильтр 3</button>
+        <button ngbDropdownItem>Фильтр 4</button>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary"  ngbDropdownToggle>Фильтр</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Фильтр 1</button>
+        <button ngbDropdownItem>Фильтр 2</button>
+        <button ngbDropdownItem>Фильтр 3</button>
+        <button ngbDropdownItem>Фильтр 4</button>
+      </div>
+    </div>
+  </div>
+  <button (click)="changeToogleToTrue()" type="button" class="btn btn-secondary" >В архиве</button>
+  <button (click)="changeToogleToFalse()" type="button" class="btn btn-secondary" >В работе</button>
+</div>
+<div [ngSwitch]="toogle" class="table">
+  <table *ngSwitchCase="true" class="table">
+    <thead>
+    <tr>
+      <th scope="col">Направление</th>
+      <th scope="col">Заказчик</th>
+      <th scope="col">Проект</th>
+      <th scope="col">Ответственный за <br> пресейл</th>
+      <th scope="col">Этап пресейла</th>
+      <th scope="col">Статус</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of presaleDataArchive">
+      <td >{{row.direction}}</td>
+      <td >{{row.customer}}</td>
+      <td >{{row.project}}</td>
+      <td >{{row.responsible}}</td>
+      <td >{{row.stage}}</td>
+      <td >{{row.status}}</td>
+      <td ></td>
+      <td ></td>
+    </tbody>
+  </table>
+  <table *ngSwitchCase="false" class="table">
+    <thead>
+    <tr>
+      <th scope="col">Направление</th>
+      <th scope="col">Заказчик</th>
+      <th scope="col">Проект</th>
+      <th scope="col">Ответственный за <br> пресейл</th>
+      <th scope="col">Этап пресейла</th>
+      <th scope="col">Статус</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of presaleDataActive">
+      <td >{{row.direction}}</td>
+      <td >{{row.customer}}</td>
+      <td >{{row.project}}</td>
+      <td >{{row.responsible}}</td>
+      <td >{{row.stage}}</td>
+      <td >{{row.status}}</td>
+      <td ></td>
+      <td ></td>
+    </tbody>
+  </table>
+
+</div>

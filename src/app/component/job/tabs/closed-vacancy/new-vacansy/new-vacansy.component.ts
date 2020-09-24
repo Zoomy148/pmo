@@ -1,8 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import { ComponentCanDeactivate } from '../../../exit.about.guard';
+import { ComponentCanDeactivate } from '../../../../../guards/exit.about.guard';
 import { Observable } from 'rxjs';
 import { DataService, vancy } from '../../../../../services/data.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import {
+  NgbModalConfig,
+  NgbModal,
+  NgbDateStruct
+} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -10,7 +15,7 @@ import {Router} from '@angular/router';
   selector: 'app-new-employee',
   templateUrl: './new-vacansy.component.html',
   styleUrls: ['./new-vacansy.component.scss'],
-  providers: [DataService ]
+  providers: [ ]
 })
 
 export class NewVacansyComponent implements OnInit, ComponentCanDeactivate {

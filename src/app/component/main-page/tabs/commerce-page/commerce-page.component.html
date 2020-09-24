@@ -1,0 +1,88 @@
+<div class="control-menu">
+  <div class="col2">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary"  ngbDropdownToggle>Направление</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Направление 1</button>
+        <button ngbDropdownItem>Направление 2</button>
+        <button ngbDropdownItem>Направление 3</button>
+        <button ngbDropdownItem>Направление 4</button>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary"  ngbDropdownToggle>Руководитель</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Руководитель 1</button>
+        <button ngbDropdownItem>Руководитель 2</button>
+        <button ngbDropdownItem>Руководитель 3</button>
+        <button ngbDropdownItem>Руководитель 4</button>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary"  ngbDropdownToggle>Статус</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Статус 1</button>
+        <button ngbDropdownItem>Статус 2</button>
+        <button ngbDropdownItem>Статус 3</button>
+        <button ngbDropdownItem>Статус 4</button>
+      </div>
+    </div>
+  </div>
+   <button (click)="changeToogleToTrue()" type="button" class="btn btn-secondary" >В архиве</button>
+   <button (click)="changeToogleToFalse()" type="button" class="btn btn-secondary" >В работе</button>
+</div>
+<div [ngSwitch]="toogle" class="table">
+  <table *ngSwitchCase="true" class="table">
+    <thead>
+    <tr>
+      <th scope="col">Краткое наименование</th>
+      <th scope="col">Направление</th>
+      <th scope="col">Руководитель проекта</th>
+      <th scope="col">Активный этап</th>
+      <th scope="col">Статус этапа</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of commerceDataArchive">
+      <td >{{row.shortName}}</td>
+      <td >{{row.direction}}</td>
+      <td >{{row.projectDirector}}</td>
+      <td >{{row.activeStage}}</td>
+      <td >{{row.statusStage}}</td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+    </tbody>
+  </table>
+  <table *ngSwitchCase="false" class="table">
+    <thead>
+    <tr>
+      <th scope="col">Краткое наименование</th>
+      <th scope="col">Направление</th>
+      <th scope="col">Руководитель проекта</th>
+      <th scope="col">Активный этап</th>
+      <th scope="col">Статус этапа </th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of commerceDataActive">
+      <td >{{row.shortName}}</td>
+      <td >{{row.direction}}</td>
+      <td >{{row.projectDirector}}</td>
+      <td >{{row.activeStage}}</td>
+      <td >{{row.statusStage}}</td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+    </tbody>
+  </table>
+
+</div>

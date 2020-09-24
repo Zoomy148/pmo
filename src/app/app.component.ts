@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AboutGuard } from './component/job/about.guard';
+import { AboutGuard } from './guards/about.guard';
 
 @Component({
   selector: 'app-root',

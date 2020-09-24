@@ -7,7 +7,7 @@ import { DataService } from '../../../../services/data.service';
   selector: 'app-closed-vacancy',
   templateUrl: './closed-vacancy.component.html',
   styleUrls: ['./closed-vacancy.component.scss'],
-  providers: [ TitleService, DataService ]
+  providers: []
 })
   export class ClosedVacancyComponent implements OnInit {
   title1 = [];
@@ -53,6 +53,6 @@ import { DataService } from '../../../../services/data.service';
   ngOnInit(): void {
     this.title1 = this.titleService.getData1();
     this.VacancyData = this.dataService.getRowsp();
-    console.log('123');
+    console.log(this.VacancyData);
   }
 }

@@ -22,9 +22,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ClosedVacancyComponent } from './component/job/tabs/closed-vacancy/closed-vacancy.component';
 import { ReadyStaffComponent } from './component/job/tabs/ready-staff/ready-staff.component';
 import { TestPipe } from './Pipe/test.pipe';
-import { ExitAboutGuard } from './component/job/exit.about.guard';
-import { AboutGuard} from './component/job/about.guard';
-import { NewEmployeeComponent } from './component/job/tabs/ready-staff/new-employee/new-employee.component';
+import { ExitAboutGuard } from './guards/exit.about.guard';
+import { AboutGuard} from './guards/about.guard';
 import { AuthComponent } from './component/auth/auth.component';
 import { TitleService } from './services/title.service';
 import { DataService } from './services/data.service';
@@ -34,6 +33,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { MainPageComponent } from './component/main-page/main-page.component';
+import { PresalePageComponent } from './component/main-page/tabs/presale-page/presale-page.component';
+import { CommercePageComponent } from './component/main-page/tabs/commerce-page/commerce-page.component';
+
 
 @NgModule({
   declarations: [
@@ -45,9 +48,11 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
     ClosedVacancyComponent,
     ReadyStaffComponent,
     TestPipe,
-    NewEmployeeComponent,
     AuthComponent,
-    NewVacansyComponent
+    NewVacansyComponent,
+    MainPageComponent,
+    PresalePageComponent,
+    CommercePageComponent
   ],
   entryComponents: [ ],
   imports: [

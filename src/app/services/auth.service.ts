@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AboutGuard } from '../component/job/about.guard';
+import { AboutGuard } from '../guards/about.guard';
 import { HttpService} from './http.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';

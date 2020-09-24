@@ -5,7 +5,6 @@ import {
 import { DataService} from '../../../../services/data.service';
 import { TitleService} from '../../../../services/title.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ConsService } from '../../../../services/cons.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { rowsa } from '../../../../services/data.service';
 import {
@@ -18,17 +17,12 @@ import {
   selector: 'app-ready-staff',
   templateUrl: './ready-staff.component.html',
   styleUrls: ['./ready-staff.component.scss'],
-  providers: [
-    ConsService,
-    TitleService,
-    DataService ,
-    MatButtonToggleModule]
+  providers: [ MatButtonToggleModule ]
 })
 export class ReadyStaffComponent implements
   OnInit {
   constructor(
     public dialog: MatDialog,
-    public consService: ConsService,
     public titleService: TitleService,
     public dataService: DataService,
     public modalService: NgbModal,
@@ -83,8 +77,7 @@ export class ReadyStaffComponent implements
     this.isSearchByName = !this.isSearchByName;
   }
   public changeStatusOpen(isOpen): void {
-    isOpen = true;
-    console.log(isOpen);
+  isOpen = true;
   }
   public changeStatusFalse(isOpen): void {
     isOpen = false;
@@ -106,6 +99,5 @@ export class ReadyStaffComponent implements
     this.NewEmployee = this.dataService.getMass();
     this.DataStaff = this.dataService.getDataStaff();
     this.sortedData = this.dataService.getSortedData();
-    this.consService.cons(this.sortedData);
   }
 }

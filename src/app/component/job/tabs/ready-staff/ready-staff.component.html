@@ -56,8 +56,8 @@
           <button ngbDropdownToggle><img src="assets/polygon.png"></button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem (click)="changeStatusOpen(row.isOpen)">Открыта</button>
-            <button ngbDropdownItem (click)="changeStatusMeet(row.isOpen)">Назначена встреча</button>
-            <button ngbDropdownItem (click)="changeStatusFalse(row.isOpen)">Закрыта</button>
+            <button ngbDropdownItem (click)="changeStatusMeet(this.row.isOpen)">Назначена встреча</button>
+            <button ngbDropdownItem (click)="changeStatusFalse(this.row.isOpen)">Закрыта</button>
           </div>
         </div>
        </td>
@@ -90,11 +90,7 @@
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>С какого числа сотрудник свободен:</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="NewEmployee.date" >
-        <mat-datepicker-toggle matSuffix [for]="picker">
-          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-        </mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input  matInput type="date"  [(ngModel)]="NewEmployee.date" >
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Введите % на который сотрудник свободен:</mat-label>

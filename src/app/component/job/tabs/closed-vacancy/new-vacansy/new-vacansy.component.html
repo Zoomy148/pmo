@@ -116,7 +116,7 @@
       </mat-form-field>
       <br><br>
       <mat-form-field class="example-full-width">
-        <input matInput>
+        <input matInput type="date">
       </mat-form-field>
       <br><br><br>
       <mat-form-field class="example-full-width">
@@ -149,8 +149,13 @@
       <h4>Оклад по окончании<br>испытательного срока</h4>
     </div>
     <div class="input-groups">
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="newVacancy.date" >
+      <mat-form-field >
+        <mat-date-range-input [rangePicker]="picker" [(ngModel)]="newVacancy.date" >
+          <input type="text" matStartDate >
+          <input type="text" matEndDate >
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <input matInput [(ngModel)]="newVacancy.quantity">
