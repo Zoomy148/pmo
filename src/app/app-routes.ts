@@ -7,17 +7,20 @@ import {AboutGuard} from './guards/about.guard';
 import {AuthComponent} from './component/auth/auth.component';
 import {NewVacansyComponent} from './component/job/tabs/closed-vacancy/new-vacansy/new-vacansy.component';
 import {MainPageComponent} from './component/main-page/main-page.component';
+import {CommerceCardComponent} from './pages/commerce-card/commerce-card.component';
 export const appRoutes: Routes = [
   { path: 'staff' , component: StaffComponent, canActivate: [ AboutGuard ] },
 
   { path: 'employment', component: EmploymentComponent, canActivate: [ AboutGuard ] },
 
-  { path: 'job', component: JobComponent ,  },
+  { path: 'job', component: JobComponent , canActivate: [ AboutGuard ]  },
 
   { path: '', component: AuthComponent },
 
-  { path: 'newvacancy', component: NewVacansyComponent , canDeactivate: [ ExitAboutGuard ] },
+  { path: 'newvacancy', component: NewVacansyComponent , canDeactivate: [ ExitAboutGuard ] , canActivate: [ AboutGuard ] },
 
-  { path: 'home', component: MainPageComponent , }
+  { path: 'home', component: MainPageComponent , canActivate: [ AboutGuard ] },
+
+  { path: 'home/page/:id', component: CommerceCardComponent , canActivate: [ AboutGuard ] }
 
 ];

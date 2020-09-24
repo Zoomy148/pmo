@@ -36,6 +36,7 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MainPageComponent } from './component/main-page/main-page.component';
 import { PresalePageComponent } from './component/main-page/tabs/presale-page/presale-page.component';
 import { CommercePageComponent } from './component/main-page/tabs/commerce-page/commerce-page.component';
+import { CommerceCardComponent } from './pages/commerce-card/commerce-card.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { CommercePageComponent } from './component/main-page/tabs/commerce-page/
     NewVacansyComponent,
     MainPageComponent,
     PresalePageComponent,
-    CommercePageComponent
+    CommercePageComponent,
+    CommerceCardComponent
   ],
   entryComponents: [ ],
   imports: [

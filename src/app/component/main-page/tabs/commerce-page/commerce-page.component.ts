@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {commerce, DataService} from '../../../../services/data.service';
 
+
 @Component({
   selector: 'app-commerce-page',
   templateUrl: './commerce-page.component.html',

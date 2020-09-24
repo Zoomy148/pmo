@@ -56,8 +56,8 @@
           <button ngbDropdownToggle><img src="assets/polygon.png"></button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem (click)="changeStatusOpen(row.isOpen)">Открыта</button>
-            <button ngbDropdownItem (click)="changeStatusMeet(this.row.isOpen)">Назначена встреча</button>
-            <button ngbDropdownItem (click)="changeStatusFalse(this.row.isOpen)">Закрыта</button>
+            <button ngbDropdownItem (click)="changeStatusMeet(row.isOpen)">Назначена встреча</button>
+            <button ngbDropdownItem (click)="changeStatusFalse(row.isOpen)">Закрыта</button>
           </div>
         </div>
        </td>

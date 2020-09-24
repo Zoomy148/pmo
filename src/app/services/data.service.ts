@@ -18,6 +18,7 @@ export interface vancy {
   status: true;
 }
 export interface commerce {
+  id: number;
   shortName: string;
   direction: string;
   projectDirector: string;
@@ -25,6 +26,7 @@ export interface commerce {
   statusStage: string;
 }
 export interface presale {
+  id: number;
   direction: string;
   customer: string;
   project: string;
@@ -133,6 +135,7 @@ export class DataService{
   commerceDataArchive: commerce[] =
     [
       {
+        id: 1231,
         shortName: 'ТММЕД',
         direction: 'Направление 1',
         projectDirector: 'Руководитель 1',
@@ -140,10 +143,11 @@ export class DataService{
         statusStage: 'Статус 1'
       },
       {
+        id: 123123,
         shortName: 'ТММЕД',
-        direction: 'Направление 1',
-        projectDirector: 'Руководитель 1',
-        activeStage: 'Этап 1' ,
+        direction: 'Направление 2',
+        projectDirector: 'Руководитель 3',
+        activeStage: 'Этап 4' ,
         statusStage: 'Статус 1'
       }
 
@@ -151,6 +155,7 @@ export class DataService{
   commerceDataActive: commerce[] =
     [
       {
+        id: 76,
         shortName: 'Aльянс',
         direction: 'Направление 1',
         projectDirector: 'Руководитель 1',
@@ -158,6 +163,7 @@ export class DataService{
         statusStage: 'Статус 1'
       },
       {
+        id: 234,
         shortName: 'Aльянс',
         direction: 'Направление 1',
         projectDirector: 'Руководитель 1',
@@ -169,6 +175,7 @@ export class DataService{
   presaleDataArchive: presale[] =
     [
       {
+        id: 1,
         direction: 'Направление 1',
         customer: 'Кокосов Андрей',
         project: 'Проект 1',
@@ -180,6 +187,7 @@ export class DataService{
   presaleDataActive: presale[] =
     [
       {
+        id: 11,
         direction: 'Направление 2',
         customer: 'Геннадий Аранович',
         project: 'Проект 2',
