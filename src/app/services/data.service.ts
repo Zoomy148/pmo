@@ -34,6 +34,21 @@ export interface presale {
   stage: string;
   status: string;
 }
+export interface stage {
+  commerceStage: string;
+  satusStage: string;
+  requisites: string;
+  deadline: string;
+  status: string;
+  date: string;
+  sum: string;
+}
+export interface file {
+  num: number;
+  filename: string;
+  place: string;
+  description: string;
+}
 export class DataService{
   name: string = '';
   isSearchByName: boolean = true;
@@ -196,7 +211,27 @@ export class DataService{
         status: 'Статус 2',
       }
     ];
-
+  commerceDataStage: stage[] =
+    [
+      {
+        commerceStage: 'Этап 1 ',
+        satusStage: 'Статус этапа 1',
+        requisites: 'Номер заказа: 1234567890',
+        deadline: '01.01.2020',
+        status: 'Подписан',
+        date: '01.01.2020 08.04.2020',
+        sum: '300'
+      }
+    ];
+  commerceDataFile: file[] =
+    [
+      {
+        num: 1,
+        filename: 'Файл №1.pdf',
+        place: 'Проект',
+        description: 'Описание'
+      }
+    ];
   addEmployee( NewEmployee): void {
     this.sortedData.push(NewEmployee);
     console.log(this.sortedData);
@@ -232,6 +267,12 @@ export class DataService{
   }
   getPresaleDataActive() {
     return this.presaleDataActive;
+  }
+  getCommerceStage() {
+    return this.commerceDataStage;
+  }
+  getCommercefile() {
+    return this.commerceDataFile;
   }
   constructor() {
     this.sortedData = this.DataStaff.slice();

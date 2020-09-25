@@ -1,1 +1,132 @@
-<h3>Модель {{id}}</h3>
+<h1>Наименование (Коммерция)</h1>
+<div class="first-input-group">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Полное наименование проекта" >
+  </mat-form-field>
+  <br>
+  <span class="naming-money"> Реквизиты договора</span>
+
+  <mat-form-field class="example-full">
+    <input matInput >
+  </mat-form-field>
+
+  <button class="btn btn-outline-primary">К пресейлу</button>
+  <br>
+  <span class="naming"> Статус подписания договора</span>
+
+  <mat-form-field class="example-full">
+    <input matInput placeholder="Полное наименование проекта" >
+  </mat-form-field>
+  <br>
+  <span class="naming">Дата изменения</span>
+
+  <mat-form-field class="example-short">
+    <input matInput type="date"  >
+  </mat-form-field>
+  <div class="text-area">
+  <textarea class="form-control"  rows="5" placeholder="Комментарии к проекту"></textarea>
+  <textarea class="form-control"  rows="5" placeholder="Проблема проекта"></textarea>
+  </div>
+  <br>
+  <div class="button-group">
+  <button class="btn btn-outline-primary" (click)="open(content)">Добавить Этап</button>
+  <button class="btn btn-outline-primary">Загрузить файл</button>
+  <div class="spacer"></div>
+  <button class="btn btn-outline-primary">Сохранить</button>
+  </div>
+</div>
+<br>
+<div class="tabs">
+  <ngb-tabset [destroyOnHide]="false">
+    <ngb-tab title="Этапы">
+      <ng-template ngbTabContent>
+        <div class="table">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Этап <br> коммерции</th>
+              <th scope="col">Статус этапа</th>
+              <th scope="col">Реквизиты</th>
+              <th scope="col">Срок окончания <br> этапа (план)</th>
+              <th scope="col">Статус акта</th>
+              <th scope="col">Дата подписания акта <br> (договор/факта)</th>
+              <th scope="col">Сумма по этапу <br> (с НДС)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let row of StageData">
+              <td >{{row.commerceStage}}</td>
+              <td >{{row.satusStage}}
+                <div ngbDropdown class="d-inline-block">
+                  <button ngbDropdownToggle><img src="assets/polygon.png"></button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem (click)="row.satusStage = 'Статус этапа 1'">Статус этапа 1</button>
+                    <button ngbDropdownItem (click)="row.satusStage = 'Статус этапа 2'">Статус этапа 2</button>
+                    <button ngbDropdownItem (click)="row.satusStage = 'Статус этапа 3'">Статус этапа 3</button>
+                  </div>
+                </div>
+              </td>
+              <td >{{row.requisites}}</td>
+              <td >{{row.deadline}}</td>
+              <td >{{row.status}}
+                <div ngbDropdown class="d-inline-block">
+                  <button ngbDropdownToggle><img src="assets/polygon.png"></button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem (click)="row.status = 'Статус акта 1'">Статус акта 1</button>
+                    <button ngbDropdownItem (click)="row.status = 'Статус акта 2'">Статус акта 2</button>
+                    <button ngbDropdownItem (click)="row.status = 'Статус акта 3'">Статус акта 3</button>
+                  </div>
+                </div>
+              </td>
+              <td >{{row.date}}</td>
+              <td >{{row.sum}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle> Файлы </ng-template>
+      <ng-template ngbTabContent>
+        <div class="table">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">Имя файла</th>
+              <th scope="col">Место загрузки файлов</th>
+              <th scope="col">Описание</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let row of FileData">
+              <td >{{row.num}}</td>
+              <td >{{row.filename}}</td>
+              <td >{{row.place}}</td>
+              <td >{{row.description}}</td>
+              <td > <img src="assets/garbage.png"> </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Добавить этап</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="addStage" >
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click');">Создать заявку</button>
+  </div>
+  </div>
+</ng-template>

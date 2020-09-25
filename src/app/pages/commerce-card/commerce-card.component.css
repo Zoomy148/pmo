@@ -1,0 +1,50 @@
+.example-full-width {
+  max-width: 1400px;
+  min-width: 700px;
+  width: 85%;
+  margin-top: 0px ;
+  margin-bottom: 0px;
+  margin-left: 30px;
+}
+.naming {
+  padding-left: 30px;
+  padding-right: 60px;
+}
+.example-full {;
+  margin-top: 0px ;
+  margin-bottom: 0px;
+  margin-left: 40px;
+  width: 45%;
+  min-width: 300px;
+  max-width: 700px;
+}
+.btn-outline-primary {
+  margin-left: 50px;
+}
+.naming-money {
+  margin-left: 30px;
+  margin-right: 115px;
+}
+.example-short {
+  margin-left: 120px;
+}
+.form-control {
+  width: 40%;
+  margin-left: 30px;
+  min-width: 300px;
+  max-width: 500px;
+}
+.text-area {
+  display: flex;
+}
+.button-group {
+  display: flex;
+}
+.spacer {
+  min-width: 300px;
+  max-width: 700px;
+  width: 41%;
+}
+.tabs {
+  margin-left: 30px;
+}

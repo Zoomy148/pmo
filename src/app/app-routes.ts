@@ -21,6 +21,6 @@ export const appRoutes: Routes = [
 
   { path: 'home', component: MainPageComponent , canActivate: [ AboutGuard ] },
 
-  { path: 'home/page/:id', component: CommerceCardComponent , canActivate: [ AboutGuard ] }
+  { path: 'home/page/:id', component: CommerceCardComponent  }
 
 ];

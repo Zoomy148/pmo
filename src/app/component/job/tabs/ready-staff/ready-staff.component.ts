@@ -76,18 +76,6 @@ export class ReadyStaffComponent implements
   public change(): void {
     this.isSearchByName = !this.isSearchByName;
   }
-  public changeStatusOpen(isOpen): void {
-  isOpen = true;
-  }
-  public changeStatusFalse(isOpen): void {
-    isOpen = false;
-    console.log(isOpen);
-  }
-  public changeStatusMeet(isOpen): void {
-    isOpen = 'Назначена Встреча';
-    console.log(isOpen);
-  }
-
   cons(): void {
     console.log(this.sortedData);
   }
