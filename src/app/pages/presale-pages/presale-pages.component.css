@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  padding-top: 10px;
+}
+.spacer {
+  width: 50%;
+  min-width: 300px;
+  max-width: 550px;
+}
+.naming {
+  padding-left: 30px;
+  padding-right: 60px;
+}
+
+.naming-right {
+  padding-left: 150px;
+  padding-right: 60px;
+}
+.text-area {
+  display: flex;
+}
+.tabs {
+  margin-left: 30px;
+}
+.form-control {
+  width: 45%;
+  margin-left: 30px;
+  min-width: 350px;
+  max-width: 550px;
+}
+.d-inline-block {
+
+}
+.naming-srok {
+  margin-left: 30px;
+  margin-right: 72px;
+}
+.naming-plan {
+  margin-left: 30px;
+  margin-right: 96px;
+}
+.example-full {
+  min-width: 300px;
+  max-width: 400px;
+}
+.naming-canal {
+  margin-left: 30px;
+  margin-right: 93px;
+}
+.naming-zakaz {
+  margin-left: 30px;
+  margin-right: 125px;
+}
+.btn-outline-primary {
+  margin-left: 30px;
+  width: 180px;
+}
+.spacerl {
+ min-width: 1px;
+  max-width: 200px;
+  padding-right: 100px;
+}

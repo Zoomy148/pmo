@@ -8,6 +8,7 @@ import {AuthComponent} from './component/auth/auth.component';
 import {NewVacansyComponent} from './component/job/tabs/closed-vacancy/new-vacansy/new-vacansy.component';
 import {MainPageComponent} from './component/main-page/main-page.component';
 import {CommerceCardComponent} from './pages/commerce-card/commerce-card.component';
+import {PresalePagesComponent} from './pages/presale-pages/presale-pages.component';
 export const appRoutes: Routes = [
   { path: 'staff' , component: StaffComponent, canActivate: [ AboutGuard ] },
 
@@ -21,6 +22,8 @@ export const appRoutes: Routes = [
 
   { path: 'home', component: MainPageComponent , canActivate: [ AboutGuard ] },
 
-  { path: 'home/page/:id', component: CommerceCardComponent  }
+  { path: 'home/card/:id', component: CommerceCardComponent  },
+
+  { path: 'home/page/:id', component: PresalePagesComponent  }
 
 ];

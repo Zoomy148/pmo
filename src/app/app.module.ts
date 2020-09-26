@@ -37,6 +37,7 @@ import { MainPageComponent } from './component/main-page/main-page.component';
 import { PresalePageComponent } from './component/main-page/tabs/presale-page/presale-page.component';
 import { CommercePageComponent } from './component/main-page/tabs/commerce-page/commerce-page.component';
 import { CommerceCardComponent } from './pages/commerce-card/commerce-card.component';
+import { PresalePagesComponent} from './pages/presale-pages/presale-pages.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { CommerceCardComponent } from './pages/commerce-card/commerce-card.compo
     MainPageComponent,
     PresalePageComponent,
     CommercePageComponent,
-    CommerceCardComponent
+    CommerceCardComponent,
+    PresalePagesComponent
   ],
   entryComponents: [ ],
   imports: [

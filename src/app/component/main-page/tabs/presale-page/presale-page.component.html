@@ -45,7 +45,7 @@
       <td >{{row.responsible}}</td>
       <td >{{row.stage}}</td>
       <td >{{row.status}}</td>
-      <td ></td>
+      <td ><a [routerLink]="['page', row.id]">Ссылочка</a></td>
       <td ></td>
     </tbody>
   </table>
@@ -69,7 +69,7 @@
       <td >{{row.responsible}}</td>
       <td >{{row.stage}}</td>
       <td >{{row.status}}</td>
-      <td ></td>
+      <td ><a [routerLink]="['page', row.id]">Ссылочка</a></td>
       <td ></td>
     </tbody>
   </table>

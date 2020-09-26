@@ -1,0 +1,62 @@
+<div class="header">
+  <h1>Наименование(Пресейл)</h1>
+  <div class="spacer"></div>
+  <button class="btn btn-outline-primary" >В коммерцию</button>
+</div>
+<div class="first-input-group">
+  <span class="naming-zakaz">Заказчик</span>
+  <mat-form-field class="example-full">
+    <input matInput >
+  </mat-form-field>
+
+  <span class="naming-right">Дата изменения</span>
+     <mat-form-field class="example-short">
+    <input matInput type="date">
+  </mat-form-field>
+  <br>
+  <span class="naming-canal">Канал продаж</span>
+  <mat-form-field class="example-full">
+    <input matInput >
+  </mat-form-field>
+  <br>
+  <span class="naming-plan">План продаж </span>
+
+  <mat-form-field class="example-full">
+    <input matInput >
+  </mat-form-field>
+  <span class="spacerl"></span>
+  <div ngbDropdown class="d-inline-block">
+    <button ngbDropdownToggle class="btn btn-outline-primary">Этап № 1</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem >Этап 1</button>
+      <button ngbDropdownItem >Этап 2</button>
+      <button ngbDropdownItem >Этап 3</button>
+    </div>
+  </div>
+  <div ngbDropdown class="d-inline-block">
+    <button ngbDropdownToggle class="btn btn-outline-primary">Статус № 1</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem >Статус 1</button>
+      <button ngbDropdownItem >Статус 2</button>
+      <button ngbDropdownItem >Статус 3</button>
+    </div>
+  </div>
+  <br>
+  <span class="naming">Планируемый срок</span>
+  <mat-form-field class="example-full">
+    <input matInput type="date">
+  </mat-form-field>
+  <br>
+  <span class="naming-srok">Договорной срок</span>
+  <mat-form-field class="example-full">
+    <input matInput type="date" >
+  </mat-form-field>
+  <div class="text-area">
+    <textarea class="form-control"  rows="5" placeholder="Промежуточные резудьтаты (комментарии)"></textarea>
+    <textarea class="form-control"  rows="5" placeholder="Поле 'Примечание о пресейле'"></textarea>
+  </div>
+  <br>
+  <button class="btn btn-outline-primary">Сохранить</button>
+</div>
+
+
