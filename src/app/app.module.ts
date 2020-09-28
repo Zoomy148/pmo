@@ -21,7 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ClosedVacancyComponent } from './component/job/tabs/closed-vacancy/closed-vacancy.component';
 import { ReadyStaffComponent } from './component/job/tabs/ready-staff/ready-staff.component';
-import { TestPipe } from './Pipe/test.pipe';
+import { TestPipe } from './pipes/test.pipe';
 import { ExitAboutGuard } from './guards/exit.about.guard';
 import { AboutGuard} from './guards/about.guard';
 import { AuthComponent } from './component/auth/auth.component';
@@ -38,6 +38,10 @@ import { PresalePageComponent } from './component/main-page/tabs/presale-page/pr
 import { CommercePageComponent } from './component/main-page/tabs/commerce-page/commerce-page.component';
 import { CommerceCardComponent } from './pages/commerce-card/commerce-card.component';
 import { PresalePagesComponent} from './pages/presale-pages/presale-pages.component';
+import { StaffCardComponent } from './pages/staff-card/staff-card.component';
+import { MatSelectModule } from '@angular/material/select';
+import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
+import { VacancyCardComponent } from './pages/vacancy-card/vacancy-card.component';
 
 
 @NgModule({
@@ -56,7 +60,9 @@ import { PresalePagesComponent} from './pages/presale-pages/presale-pages.compon
     PresalePageComponent,
     CommercePageComponent,
     CommerceCardComponent,
-    PresalePagesComponent
+    PresalePagesComponent,
+    StaffCardComponent,
+    VacancyCardComponent
   ],
   entryComponents: [ ],
   imports: [
@@ -79,7 +85,9 @@ import { PresalePagesComponent} from './pages/presale-pages/presale-pages.compon
     MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRippleModule
+    MatRippleModule,
+    MatSelectModule,
+    MatExpansionModule,
   ],
   providers: [ExitAboutGuard, AboutGuard , TitleService , DataService, AuthService],
   bootstrap: [AppComponent],

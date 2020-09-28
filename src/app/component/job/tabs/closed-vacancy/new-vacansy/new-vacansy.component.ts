@@ -3,11 +3,7 @@ import { ComponentCanDeactivate } from '../../../../../guards/exit.about.guard';
 import { Observable } from 'rxjs';
 import { DataService, vancy } from '../../../../../services/data.service';
 import { Router } from '@angular/router';
-import {
-  NgbModalConfig,
-  NgbModal,
-  NgbDateStruct
-} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 

@@ -14,8 +14,13 @@
   <br>
   <span class="naming"> Статус подписания договора</span>
 
-  <mat-form-field class="example-full">
-    <input matInput placeholder="Полное наименование проекта" >
+  <mat-form-field class="example-full" >
+    <mat-select>
+      <mat-option value="Статус подписания договора 1">Статус подписания договора 1</mat-option>
+      <mat-option value="Статус подписания договора 2">Статус подписания договора 2</mat-option>
+      <mat-option value="Статус подписания договора 3">Статус подписания договора 3</mat-option>
+    </mat-select>
+    <mat-hint align="end"></mat-hint>
   </mat-form-field>
   <br>
   <span class="naming">Дата изменения</span>
@@ -93,20 +98,23 @@
           <table class="table">
             <thead>
             <tr>
+
               <th scope="col">№</th>
               <th scope="col">Имя файла</th>
               <th scope="col">Место загрузки файлов</th>
               <th scope="col">Описание</th>
               <th scope="col"></th>
+
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let row of FileData">
-              <td >{{row.num}}</td>
-              <td >{{row.filename}}</td>
-              <td >{{row.place}}</td>
-              <td >{{row.description}}</td>
-              <td > <img src="assets/garbage.png"> </td>
+              <tr *ngFor="let row of FileData">
+                <td >{{row.num}}</td>
+                <td >{{row.filename}}</td>
+                <td >{{row.place}}</td>
+                <td >{{row.description}}</td>
+                <td > <img src="assets/garbage.png"> </td>
+                <td></td>
             </tr>
             </tbody>
           </table>
@@ -124,8 +132,53 @@
   </div>
   <div class="modal-body">
     <div class="addStage" >
+      <span class="naming">Cумма по этапу</span>
+      <mat-form-field class="example-short">
+        <input matInput  >
+      </mat-form-field>
+      <mat-form-field class="example-short">
+        <mat-select>
+          <mat-option value="Статус платежа 1">Статус платежа 1</mat-option>
+          <mat-option value="Статус платежа 2">Статус платежа 2</mat-option>
+          <mat-option value="Статус платежа 3">Статус платежа 3</mat-option>
+        </mat-select>
+        <mat-hint align="end"></mat-hint>
+      </mat-form-field>
+      <br>
+      <span class="naming">Cумма выплат субподрядчикам</span>
+      <mat-form-field class="example-short">
+        <input matInput  >
+      </mat-form-field>
+      <mat-form-field class="example-short" >
+        <mat-select>
+          <mat-option value="Статус платежа 1">Статус платежа 1</mat-option>
+          <mat-option value="Статус платежа 2">Статус платежа 2</mat-option>
+          <mat-option value="Статус платежа 3">Статус платежа 3</mat-option>
+        </mat-select>
+        <mat-hint align="end"></mat-hint>
+      </mat-form-field>
+      <br>
+      <span class="naming">Итого</span>
+      <br>
+      <mat-form-field class="example-short">
+        <input matInput  >
+      </mat-form-field>
+      <br><br>
+      <span class="naming">Дата платежа по договору</span>
+      <mat-form-field class="example-short">
+        <input matInput type="date"  >
+      </mat-form-field>
+      <br>
+      <span class="naming">Дата оплаты (факт)</span>
+      <mat-form-field class="example-short">
+        <input matInput type="date"  >
+      </mat-form-field>
+      <textarea class="form-control"  rows="5" placeholder="Комментарии "></textarea>
+      <textarea class="form-control"  rows="5" placeholder="Проблема "></textarea>
   </div>
   <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark">Загрузить файл</button>
+    <span class="specerok"></span>
     <button type="button" class="btn btn-outline-dark" (click)="c('Save click');">Создать заявку</button>
   </div>
   </div>

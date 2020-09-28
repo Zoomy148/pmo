@@ -80,11 +80,19 @@ export class ReadyStaffComponent implements
     console.log(this.sortedData);
   }
   addEmployes(NewEmployee): void {
-    this.dataService.addEmployee(NewEmployee);
+    this.dataService.addEmployee(JSON.parse(JSON.stringify(NewEmployee)));
   }
   ngOnInit(): void {
     this.title = this.titleService.getData();
-    this.NewEmployee = this.dataService.getMass();
+    this.NewEmployee = {
+      number: 1,
+      name: '',
+      position: '',
+      contact: '',
+      date: '',
+      procent: '',
+      isOpen: true ,
+    };
     this.DataStaff = this.dataService.getDataStaff();
     this.sortedData = this.dataService.getSortedData();
   }

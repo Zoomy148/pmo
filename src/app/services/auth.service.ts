@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { AboutGuard } from '../guards/about.guard';
 import { HttpService} from './http.service';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
- users: User[] = [];
+ users: any = [];
  getAuf(login, password) {
   for (const user of this.users) {
     if (login === user.name && password === user.password) {

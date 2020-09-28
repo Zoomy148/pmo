@@ -55,6 +55,7 @@
             <button ngbDropdownItem (click)="changeStatusFalse(row.status)">Закрыта</button>
           </div>
         </div> </td>
+        <td > <a [routerLink]="['card', row.number]">Ссылочка</a> </td>
    </tbody>
   </table>
 </div>

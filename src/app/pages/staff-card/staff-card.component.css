@@ -1,0 +1,39 @@
+.naming {
+  padding-left: 30px;
+  padding-right: 60px;
+}
+.naming-name {
+  padding-left: 30px;
+  padding-right: 97px;
+}
+.naming-number {
+  padding-left: 30px;
+  padding-right: 112px;
+}
+.naming-group {
+  padding-left: 30px;
+  padding-right: 125px;
+}
+.naming-direction {
+  padding-left: 30px;
+  padding-right: 90px;
+}
+.naming-info{
+  padding-left: 30px;
+  padding-right: 65px;
+}
+.naming-info2{
+  padding-left: 30px;
+  padding-right: 64px;
+}
+.first-input-group {
+  font-size: 16px;
+}
+.text-area-group {
+  display: flex;
+
+}
+.form-control {
+  margin-left: 30px;
+  margin-right: 30px;
+}

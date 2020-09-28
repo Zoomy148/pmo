@@ -9,6 +9,8 @@ import {NewVacansyComponent} from './component/job/tabs/closed-vacancy/new-vacan
 import {MainPageComponent} from './component/main-page/main-page.component';
 import {CommerceCardComponent} from './pages/commerce-card/commerce-card.component';
 import {PresalePagesComponent} from './pages/presale-pages/presale-pages.component';
+import {StaffCardComponent} from './pages/staff-card/staff-card.component';
+import {VacancyCardComponent} from './pages/vacancy-card/vacancy-card.component';
 export const appRoutes: Routes = [
   { path: 'staff' , component: StaffComponent, canActivate: [ AboutGuard ] },
 
@@ -24,6 +26,10 @@ export const appRoutes: Routes = [
 
   { path: 'home/card/:id', component: CommerceCardComponent  },
 
-  { path: 'home/page/:id', component: PresalePagesComponent  }
+  { path: 'home/page/:id', component: PresalePagesComponent  },
+
+  { path: 'staff/card/:number', component: StaffCardComponent },
+
+  {path: 'job/card/:number', component: VacancyCardComponent}
 
 ];

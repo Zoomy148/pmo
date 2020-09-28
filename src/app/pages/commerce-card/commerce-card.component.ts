@@ -16,6 +16,7 @@ export class CommerceCardComponent implements OnInit {
   id: number;
   StageData: stage[] = [];
   FileData: file[] = [];
+  panelOpenState = false;
   public subscription: Subscription;
   constructor(public activateRoute: ActivatedRoute ,
               public dataService: DataService ,
